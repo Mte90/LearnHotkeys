@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="X.X" def="Generic hotkey for all software" software="Generic">
+		<hotkey>
+			<question>Copy</question>
+			<key>Ctrl+C</key>
+		</hotkey>
+		<hotkey>
+			<question>Paste</question>
+			<key>Ctrl+V</key>
+		</hotkey>
+		<hotkey>
+			<question>Cut</question>
+			<key>Ctrl+X</key>
+		</hotkey>
+		<hotkey>
+			<question>Close</question>
+			<key>Ctrl+Q</key>
+		</hotkey>
+		<hotkey>
+			<question>Save</question>
+			<key>Ctrl+S</key>
+		</hotkey>
+		<hotkey>
+			<question>Back</question>
+			<key>Ctrl+Z</key>
+		</hotkey>
+		<hotkey>
+			<question>Find</question>
+			<key>Ctrl+F</key>
+		</hotkey>
+		<hotkey>
+			<question>Select All</question>
+			<key>Ctrl+A</key>
+		</hotkey>
+</software>
