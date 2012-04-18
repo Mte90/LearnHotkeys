@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/LearnHotkeys/defdialog.ui'
 #
-# Created: Sun Apr  8 16:44:49 2012
+# Created: Wed Apr 18 23:51:08 2012
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -25,10 +25,13 @@ class Ui_DefDialog(object):
         self.groupBox.setGeometry(QtCore.QRect(10, 10, 371, 121))
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.comboDef = QtGui.QComboBox(self.groupBox)
-        self.comboDef.setGeometry(QtCore.QRect(20, 20, 151, 22))
+        self.comboDef.setGeometry(QtCore.QRect(20, 50, 331, 22))
         self.comboDef.setObjectName(_fromUtf8("comboDef"))
+        self.label_2 = QtGui.QLabel(self.groupBox)
+        self.label_2.setGeometry(QtCore.QRect(20, 20, 161, 21))
+        self.label_2.setObjectName(_fromUtf8("label_2"))
         self.labelDef = QtGui.QLabel(self.groupBox)
-        self.labelDef.setGeometry(QtCore.QRect(190, 20, 161, 21))
+        self.labelDef.setGeometry(QtCore.QRect(20, 80, 161, 21))
         self.labelDef.setText(_fromUtf8(""))
         self.labelDef.setObjectName(_fromUtf8("labelDef"))
         self.label = QtGui.QLabel(DefDialog)
@@ -42,5 +45,6 @@ class Ui_DefDialog(object):
         DefDialog.setWindowTitle(QtGui.QApplication.translate("DefDialog", "Choose Definition", None, QtGui.QApplication.UnicodeUTF8))
         self.pushApply.setText(QtGui.QApplication.translate("DefDialog", "Apply", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox.setTitle(QtGui.QApplication.translate("DefDialog", "Definition File", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("DefDialog", "Choose definition file:", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("DefDialog", "Work in progress", None, QtGui.QApplication.UnicodeUTF8))
 

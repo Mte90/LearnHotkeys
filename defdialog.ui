@@ -42,17 +42,30 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>20</y>
-      <width>151</width>
+      <y>50</y>
+      <width>331</width>
       <height>22</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Choose definition file:</string>
     </property>
    </widget>
    <widget class="QLabel" name="labelDef">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>20</y>
+      <x>20</x>
+      <y>80</y>
       <width>161</width>
       <height>21</height>
      </rect>
