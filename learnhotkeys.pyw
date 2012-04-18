@@ -54,10 +54,8 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.question()
 		
 	def openDefDialog(self):
-		window = QDialog()
 		ui = DefWindow()
 		ui.setupUi(window)
-		window.exec_()
 		
 	def checkAnswer(self, who):
 		if who.text() == self.key[self.question][1]:
