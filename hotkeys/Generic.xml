@@ -21,7 +21,7 @@
 			<key>Ctrl+S</key>
 		</hotkey>
 		<hotkey>
-			<question>Back</question>
+			<question>Revert action</question>
 			<key>Ctrl+Z</key>
 		</hotkey>
 		<hotkey>
