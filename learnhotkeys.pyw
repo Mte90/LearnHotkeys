@@ -11,6 +11,8 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	key = []
 	question = 0
+	settings = QSettings('settings.ini', QSettings.IniFormat)
+	settings.setFallbacksEnabled(False)
 
 	def __init__ ( self, parent = None ):
 		QMainWindow.__init__( self, parent )
@@ -21,7 +23,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.radioButton_3.pressed.connect(lambda who=self.ui.radioButton_3: self.checkAnswer(who))
 		self.ui.newQuestionButton.pressed.connect(self.question)
 		self.ui.openDef.clicked.connect(self.openDefDialog)
-		self.loadHotkeys(os.path.dirname(inspect.getfile(inspect.currentframe())) + '/hotkeys/Generic.xml')
+		self.loadHotkeys(os.path.dirname(inspect.getfile(inspect.currentframe())) + '/hotkeys/'+self.settings.value('file_name_default').toString())
 		self.ui.newQuestionButton.setEnabled(False)
 		self.show()
 
@@ -54,9 +56,11 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.question()
 		
 	def openDefDialog(self):
+		window = QDialog()
 		ui = DefWindow()
 		ui.setupUi(window)
-		
+		ui.exec_()
+
 	def checkAnswer(self, who):
 		if who.text() == self.key[self.question][1]:
 			self.ui.result.setText('<font color="#00ff00" style="font-weight:bold">Correct answer</font>')
@@ -90,8 +94,9 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 
 def main():
     app = QApplication(sys.argv)
-    form = MainWindow()
-    form.show()
-    app.exec_()
-    
+    MainWindow_ = QMainWindow()
+    ui = MainWindow()
+    ui.setupUi(MainWindow_)
+    sys.exit(app.exec_())
+
 main()
