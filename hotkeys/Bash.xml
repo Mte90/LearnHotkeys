@@ -46,7 +46,7 @@
 		</hotkey>
 		<hotkey>
 			<question>Yank(Paste) the text placed in the buffer with Ctrl+U or Ctrl+K</question>
-			<key>Ctrl+K</key>
+			<key>Ctrl+Y</key>
 		</hotkey>
 
 
