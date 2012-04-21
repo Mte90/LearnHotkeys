@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="11.0" def="Firefox Hotkeys" software="Firefox">
+		<hotkey>
+			<question>Help</question>
+			<key>F1</key>
+		</hotkey>
+		<hotkey>
+			<question>Exit</question>
+			<key>Ctrl+Q</key>
+		</hotkey>
+		<hotkey>
+			<question>Back</question>
+			<key>Alt+Left Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Forward</question>
+			<key>Alt+Right Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Home</question>
+			<key>Alt+Home</key>
+		</hotkey>
+		<hotkey>
+			<question>Open File</question>
+			<key>Ctrl+O</key>
+		</hotkey>
+		<hotkey>
+			<question>Reload</question>
+			<key>Ctrl+R</key>
+		</hotkey>
+		<hotkey>
+			<question>Reload (override cache)</question>
+			<key>Ctrl+Shift+R</key>
+		</hotkey>
+		<hotkey>
+			<question>Stop</question>
+			<key>Esc</key>
+		</hotkey>
+		<hotkey>
+			<question>Go to Bottom of Page</question>
+			<key>End</key>
+		</hotkey>
+		<hotkey>
+			<question>Go to Top of Page</question>
+			<key>Home</key>
+		</hotkey>
+		<hotkey>
+			<question>Move to Next Frame</question>
+			<key>F6</key>
+		</hotkey>
+		<hotkey>
+			<question>Move to Previous Frame</question>
+			<key>Shift+F6</key>
+		</hotkey>
+		<hotkey>
+			<question>Print</question>
+			<key>Ctrl+P</key>
+		</hotkey>
+		<hotkey>
+			<question>Save Page As</question>
+			<key>Ctrl+S</key>
+		</hotkey>
+		<hotkey>
+			<question>Zoom In</question>
+			<key>Ctrl++</key>
+		</hotkey>
+		<hotkey>
+			<question>Zoom Out</question>
+			<key>Ctrl+-</key>
+		</hotkey>
+		<hotkey>
+			<question>Zoom Reset</question>
+			<key>Ctrl+0</key>
+		</hotkey>
+		<hotkey>
+			<question>Copy</question>
+			<key>Ctrl+C</key>
+		</hotkey>
+		<hotkey>
+			<question>Cut</question>
+			<key>Ctrl+X</key>
+		</hotkey>
+		<hotkey>
+			<question>Delete</question>
+			<key>Del</key>
+		</hotkey>
+		<hotkey>
+			<question>Paste</question>
+			<key>Ctrl+V</key>
+		</hotkey>
+		<hotkey>
+			<question>Redo</question>
+			<key>Ctrl+Shift+Z</key>
+		</hotkey>
+		<hotkey>
+			<question>Select All</question>
+			<key>Ctrl+A</key>
+		</hotkey>
+		<hotkey>
+			<question>Undo</question>
+			<key>Ctrl+Z</key>
+		</hotkey>
+		<hotkey>
+			<question>Find</question>
+			<key>Ctrl+F</key>
+		</hotkey>
+		<hotkey>
+			<question>Find Again</question>
+			<key>Ctrl+G</key>
+		</hotkey>
+		<hotkey>
+			<question>Find Previous</question>
+			<key>Ctrl+Shift+G</key>
+		</hotkey>
+		<hotkey>
+			<question>Quick Find within link-text only</question>
+			<key>'</key>
+		</hotkey>
+		<hotkey>
+			<question>Quick Find</question>
+			<key>/</key>
+		</hotkey>
+		<hotkey>
+			<question>Close the Find or Quick Find bar</question>
+			<key>Esc</key>
+		</hotkey>
+		<hotkey>
+			<question>Search Bar</question>
+			<key>Ctrl+K</key>
+		</hotkey>
+		<hotkey>
+			<question>Select or Manage Search Engines</question>
+			<key>Alt+[Up Arrow...Down Arrow]</key>
+		</hotkey>
+		<hotkey>
+			<question>Close Tab</question>
+			<key>Ctrl+W</key>
+		</hotkey>
+		<hotkey>
+			<question>Close Window</question>
+			<key>Ctrl+Shift+W</key>
+		</hotkey>
+		<hotkey>
+			<question>Move Tab in focus Left</question>
+			<key>Ctrl+Left Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Move Tab in focus Right</question>
+			<key>Ctrl+Right Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Move Tab in focus to start</question>
+			<key>Ctrl+Home</key>
+		</hotkey>
+		<hotkey>
+			<question>Move Tab in focus to end</question>
+			<key>Ctrl+End</key>
+		</hotkey>
+		<hotkey>
+			<question>New Tab</question>
+			<key>Ctrl+T</key>
+		</hotkey>
+		<hotkey>
+			<question>New Windows</question>
+			<key>Ctrl+N</key>
+		</hotkey>
+		<hotkey>
+			<question>Next Tab</question>
+			<key>Ctrl+Tab</key>
+		</hotkey>
+		<hotkey>
+			<question>Open Address in New Tab</question>
+			<key>Alt+Enter</key>
+		</hotkey>
+		<hotkey>
+			<question>Previous Tab</question>
+			<key>Ctrl+Shift+Tab</key>
+		</hotkey>
+		<hotkey>
+			<question>Undo Close Tab</question>
+			<key>Ctrl+Shift+T</key>
+		</hotkey>
+		<hotkey>
+			<question>Undo Close Window</question>
+			<key>Ctrl+Shift+N</key>
+		</hotkey>
+		<hotkey>
+			<question>Select Tab 1 to 8</question>
+			<key>Alt+[1...8]</key>
+		</hotkey>
+		<hotkey>
+			<question>Select Last Tab</question>
+			<key>Alt+9</key>
+		</hotkey>
+		<hotkey>
+			<question>Tab Groups View</question>
+			<key>Ctrl+Shift+E</key>
+		</hotkey>
+		<hotkey>
+			<question>Close Tab Groups View</question>
+			<key>Esc</key>
+		</hotkey>
+		<hotkey>
+			<question>Next Tab Group</question>
+			<key>Ctrl+`</key>
+		</hotkey>
+		<hotkey>
+			<question>Previous Tab Group</question>
+			<key>Ctrl+Shift+`</key>
+		</hotkey>
+		<hotkey>
+			<question>History Sidebar</question>
+			<key>Ctrl+H</key>
+		</hotkey>
+		<hotkey>
+			<question>Library Window (Histoty)</question>
+			<key>Ctrl+Shift+H</key>
+		</hotkey>
+		<hotkey>
+			<question>Bookmarks Sidebar</question>
+			<key>Ctrl+B</key>
+		</hotkey>
+		<hotkey>
+			<question>Library Window (Bookmarks)</question>
+			<key>Ctrl+Shift+B</key>
+		</hotkey>
+		<hotkey>
+			<question>Bookmark This Page</question>
+			<key>Ctrl+D</key>
+		</hotkey>
+		<hotkey>
+			<question>Bookmark All Tabs</question>
+			<key>Ctrl+Shift+D</key>
+		</hotkey>
+		<hotkey>
+			<question>Downloads</question>
+			<key>Ctrl+J</key>
+		</hotkey>
+		<hotkey>
+			<question>Add-ons</question>
+			<key>Ctrl+Shift+A</key>
+		</hotkey>
+		<hotkey>
+			<question>Web Console</question>
+			<key>Ctrl+Shift+K</key>
+		</hotkey>
+		<hotkey>
+			<question>Inspect</question>
+			<key>Ctrl+Shift+I</key>
+		</hotkey>
+		<hotkey>
+			<question>Scratchpad</question>
+			<key>Shift+F4</key>
+		</hotkey>
+		<hotkey>
+			<question>Style Editor</question>
+			<key>Shift+F7</key>
+		</hotkey>
+		<hotkey>
+			<question>Page Source</question>
+			<key>Ctrl+U</key>
+		</hotkey>
+		<hotkey>
+			<question>Error Console</question>
+			<key>Ctrl+Shift+J</key>
+		</hotkey>
+		<hotkey>
+			<question>DOM Inspector</question>
+			<key>Ctrl+Shift+I</key>
+		</hotkey>
+		<hotkey>
+			<question>Page Info</question>
+			<key>Ctrl+I</key>
+		</hotkey>
+		<hotkey>
+			<question>Toggle Private Browsing</question>
+			<key>Ctrl+Shift+P</key>
+		</hotkey>
+		<hotkey>
+			<question>Clear Recent History</question>
+			<key>Ctrl+Shift+Del</key>
+		</hotkey>
+		<hotkey>
+			<question>Complete .com Address</question>
+			<key>Ctrl+Enter</key>
+		</hotkey>
+		<hotkey>
+			<question>Complete .net Address</question>
+			<key>Shift+Enter</key>
+		</hotkey>
+		<hotkey>
+			<question>Complete .org Address</question>
+			<key>Ctrl+Shift+Enter</key>
+		</hotkey>
+		<hotkey>
+			<question>Select Next Autocomplete Entry</question>
+			<key>Down Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Select Previous Autocomplete Entry</question>
+			<key>Up Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Delete Selected Autocomplete Entry</question>
+			<key>Del</key>
+		</hotkey>
+		<hotkey>
+			<question>Toggle Full Screen</question>
+			<key>F11</key>
+		</hotkey>
+		<hotkey>
+			<question>Toggle Menu Bar</question>
+			<key>Alt</key>
+			<key>F10</key>
+		</hotkey>
+		<hotkey>
+			<question>Show/Hide Add-on Bar</question>
+			<key>Ctrl+/</key>
+		</hotkey>
+		<hotkey>
+			<question>Carte Browsing</question>
+			<key>F7</key>
+		</hotkey>
+		<hotkey>
+			<question>Select Location Bar</question>
+			<key>Ctrl+L</key>
+		</hotkey>
+		<hotkey>
+			<question>Toggle Play/Pause</question>
+			<key>Space bar</key>
+		</hotkey>
+		<hotkey>
+			<question>Decrease volume</question>
+			<key>Down Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Increase volume</question>
+			<key>Up Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Mute audio</question>
+			<key>Ctrl+Down Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Unmute audio</question>
+			<key>Ctrl+Up Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Seek back 15 seconds</question>
+			<key>Left Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Seek back 10%</question>
+			<key>Ctrl+Left Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Seek foward 15 seconds</question>
+			<key>Right Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Seek foward 10%</question>
+			<key>Ctrl+Right Arrow</key>
+		</hotkey>
+		<hotkey>
+			<question>Seek to the beginning</question>
+			<key>Home</key>
+		</hotkey>
+		<hotkey>
+			<question>Seek to the end</question>
+			<key>End</key>
+		</hotkey>
+</software>
