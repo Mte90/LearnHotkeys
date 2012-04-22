@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="X.X" def="Generic hotkeys for the bourne again shell" software="Bash">
+		<hotkey>
+			<question>Go to the beginning of the line you are currently typing on</question>
+			<key>Ctrl+A</key>
+		</hotkey>
+		<hotkey>
+			<question>Go to the end of the line you are currently typing on</question>
+			<key>Ctrl+E</key>
+		</hotkey>
+		<hotkey>
+			<question>Clears the Screen, similar to the clear command</question>
+			<key>Ctrl+L</key>
+		</hotkey>
+		<hotkey>
+			<question>Clears the line before the cursor position. If you are at the end of the line, clears the entire line.</question>
+			<key>Ctrl+U</key>
+		</hotkey>
+		<hotkey>
+			<question>Same as backspace</question>
+			<key>Ctrl+H</key>
+		</hotkey>
+		<hotkey>
+			<question>Let’s you search through previously used commands</question>
+			<key>Ctrl+R</key>
+		</hotkey>
+		<hotkey>
+			<question>Kill whatever you are running</question>
+			<key>Ctrl+C</key>
+		</hotkey>
+		<hotkey>
+			<question>Exit the current shell</question>
+			<key>Ctrl+D</key>
+		</hotkey>
+		<hotkey>
+			<question>Puts whatever you are running into a suspended background process. fg restores it.</question>
+			<key>Ctrl+Z</key>
+		</hotkey>
+		<hotkey>
+			<question>Delete the word before the cursor</question>
+			<key>Ctrl+W</key>
+		</hotkey>
+		<hotkey>
+			<question>Clear the line after the cursor</question>
+			<key>Ctrl+K</key>
+		</hotkey>
+		<hotkey>
+			<question>Yank(Paste) the text placed in the buffer with Ctrl+U or Ctrl+K</question>
+			<key>Ctrl+Y</key>
+		</hotkey>
+
+
+		<hotkey>
+			<question>Swap the last two characters before the cursor</question>
+			<key>Ctrl+T</key>
+		</hotkey>
+		<hotkey>
+			<question>Swap the last two words before the cursor</question>
+			<key>Esc+T</key>
+		</hotkey>
+		<hotkey>
+			<question>Move cursor forward one word on the current line</question>
+			<key>Alt+F</key>
+		</hotkey>
+		<hotkey>
+			<question>Move cursor backward one word on the current line</question>
+			<key>Alt+B</key>
+		</hotkey>
+		<hotkey>
+			<question>Auto-complete files and folder names</question>
+			<key>Tab</key>
+		</hotkey>
+</software>
