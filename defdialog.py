@@ -48,7 +48,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 		if not root.hasAttribute('fileversion'):
 			QMessageBox.information(self.window(), "LearnHotkeys","The file "+self.ui.comboDef.currentText()+" is not an LearnHotkeys definition file.")
 			return False
-		self.ui.labelDef.setText('<font style="font-weight:bold">'+root.attribute('software')+' - '+root.attribute('softwareversion')+'<font><br>'+root.attribute('def'))
+		self.ui.labelDef.setText('<font style="font-weight:bold">'+root.attribute('software')+' - '+root.attribute('softwareversion')+'<font><br>'+root.attribute('def')+' <a href="'+root.attribute('softwaresite')+'">'+root.attribute('softwaresite')+'</a>')
 		
 	def saveConfig(self):
 		self.settings.setValue("file_name_default", self.ui.comboDef.currentText())
