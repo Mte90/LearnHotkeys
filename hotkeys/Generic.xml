@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<software fileversion="1.0" softwareversion="X.X" def="Generic hotkey for all software" software="Generic">
+<software fileversion="1.0" softwareversion="X.X" def="Generic hotkey for all software" software="Generic" softwaresite="">
 		<hotkey>
 			<question>Copy</question>
 			<key>Ctrl+C</key>

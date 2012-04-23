@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<software fileversion="1.0" softwareversion="X.X" def="Generic hotkeys for the bourne again shell" software="Bash">
+<software fileversion="1.0" softwareversion="X.X" def="Generic hotkeys for the bourne again shell" software="Bash" softwaresite="http://www.gnu.org/software/bash/">
 		<hotkey>
 			<question>Go to the beginning of the line you are currently typing on</question>
 			<key>Ctrl+A</key>
