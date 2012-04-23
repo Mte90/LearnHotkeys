@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="1.3" def="Twitter Client for KDE" software="Choqok" softwaresite="http://choqok.gnufolks.org/">
+		<hotkey>
+			<question>Mark all as read</question>
+			<key>Ctrl+R</key>
+		</hotkey>
+		<hotkey>
+			<question>Quick post</question>
+			<key>Ctrl+T</key>
+		</hotkey>
+		<hotkey>
+			<question>Update Timelines</question>
+			<key>F5</key>
+		</hotkey>
+		<hotkey>
+			<question>Hide menubar</question>
+			<key>Ctrl+M</key>
+		</hotkey>
+		<hotkey>
+			<question>Enable update timer</question>
+			<key>Ctrl+U</key>
+		</hotkey>
+		<hotkey>
+			<question>Enable notification</question>
+			<key>Ctrl+N</key>
+		</hotkey>
+		<hotkey>
+			<question>Search</question>
+			<key>Ctrl+F</key>
+		</hotkey>
+</software>
