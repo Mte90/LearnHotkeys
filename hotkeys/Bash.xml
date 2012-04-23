@@ -48,8 +48,6 @@
 			<question>Yank(Paste) the text placed in the buffer with Ctrl+U or Ctrl+K</question>
 			<key>Ctrl+Y</key>
 		</hotkey>
-
-
 		<hotkey>
 			<question>Swap the last two characters before the cursor</question>
 			<key>Ctrl+T</key>

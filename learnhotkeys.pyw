@@ -10,7 +10,6 @@ from defdialog import DefWindow
 class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	key = []
-	question_list = 0
 	settings = QSettings('settings.ini', QSettings.IniFormat)
 	settings.setFallbacksEnabled(False)
 
@@ -23,11 +22,12 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.radioButton_3.pressed.connect(lambda who=self.ui.radioButton_3: self.checkAnswer(who))
 		self.ui.newQuestionButton.pressed.connect(self.new_question)
 		self.ui.openDef.clicked.connect(self.openDefDialog)
-		self.loadHotkeys(os.path.dirname(inspect.getfile(inspect.currentframe())) + '/hotkeys/'+self.settings.value('file_name_default').toString())
+		self.loadHotkeys()
 		self.ui.newQuestionButton.setEnabled(False)
 		self.show()
 
-	def loadHotkeys(self, fname):
+	def loadHotkeys(self):
+		fname = os.path.dirname(inspect.getfile(inspect.currentframe())) + '/hotkeys/'+self.settings.value('file_name_default').toString()
 		dom = QDomDocument()
 		error = None
 		fh = None
@@ -62,10 +62,10 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		ui.exec_()
 
 	def checkAnswer(self, who):
-		if who.text() == self.key[self.question_list][1]:
+		if who.text() == self.key[self.question_chosen][1]:
 			self.ui.result.setText('<font color="#00ff00" style="font-weight:bold">Correct answer</font>')
 		else:
-			self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer are '+self.key[self.question_list][1]+'</font>')
+			self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer are '+self.key[self.question_chosen][1]+'</font>')
 		self.ui.radioButton.setEnabled(False)
 		self.ui.radioButton_2.setEnabled(False)
 		self.ui.radioButton_3.setEnabled(False)
