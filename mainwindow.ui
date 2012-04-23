@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>500</width>
     <height>247</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>400</width>
+    <width>500</width>
     <height>263</height>
    </size>
   </property>
@@ -31,7 +31,7 @@
      <rect>
       <x>10</x>
       <y>40</y>
-      <width>371</width>
+      <width>471</width>
       <height>51</height>
      </rect>
     </property>
@@ -47,7 +47,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>381</width>
+      <width>481</width>
       <height>16</height>
      </rect>
     </property>
@@ -59,59 +59,20 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
-      <width>381</width>
-      <height>91</height>
+      <y>100</y>
+      <width>481</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="title">
      <string>HotKeys</string>
     </property>
-    <widget class="QRadioButton" name="radioButton">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>RadioButton</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_2">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>RadioButton</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_3">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>30</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>RadioButton</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="result">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>70</y>
-       <width>241</width>
+       <y>80</y>
+       <width>351</width>
        <height>16</height>
       </rect>
      </property>
@@ -122,8 +83,8 @@
     <widget class="QPushButton" name="newQuestionButton">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>70</y>
+       <x>370</x>
+       <y>80</y>
        <width>97</width>
        <height>23</height>
       </rect>
@@ -132,13 +93,46 @@
       <string>New Question</string>
      </property>
     </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>461</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QRadioButton" name="radioButton">
+        <property name="text">
+         <string>RadioButton</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_2">
+        <property name="text">
+         <string>RadioButton</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_3">
+        <property name="text">
+         <string>RadioButton</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QPushButton" name="openDef">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>220</y>
-      <width>381</width>
+      <width>481</width>
       <height>23</height>
      </rect>
     </property>
