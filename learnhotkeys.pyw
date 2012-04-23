@@ -10,7 +10,7 @@ from defdialog import DefWindow
 class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	key = []
-	question = 0
+	question_list = 0
 	settings = QSettings('settings.ini', QSettings.IniFormat)
 	settings.setFallbacksEnabled(False)
 
@@ -21,7 +21,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.radioButton.pressed.connect(lambda who=self.ui.radioButton: self.checkAnswer(who))
 		self.ui.radioButton_2.pressed.connect(lambda who=self.ui.radioButton_2: self.checkAnswer(who))
 		self.ui.radioButton_3.pressed.connect(lambda who=self.ui.radioButton_3: self.checkAnswer(who))
-		self.ui.newQuestionButton.pressed.connect(self.question)
+		self.ui.newQuestionButton.pressed.connect(self.new_question)
 		self.ui.openDef.clicked.connect(self.openDefDialog)
 		self.loadHotkeys(os.path.dirname(inspect.getfile(inspect.currentframe())) + '/hotkeys/'+self.settings.value('file_name_default').toString())
 		self.ui.newQuestionButton.setEnabled(False)
@@ -53,7 +53,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		while not child.isNull():
 			self.key.append([child.firstChildElement('question').text(),child.firstChildElement('key').text()])
 			child = child.nextSiblingElement('hotkey')
-		self.question()
+		self.new_question()
 		
 	def openDefDialog(self):
 		window = QDialog()
@@ -62,22 +62,22 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		ui.exec_()
 
 	def checkAnswer(self, who):
-		if who.text() == self.key[self.question][1]:
+		if who.text() == self.key[self.question_list][1]:
 			self.ui.result.setText('<font color="#00ff00" style="font-weight:bold">Correct answer</font>')
 		else:
-			self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer are '+self.key[self.question][1]+'</font>')
+			self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer are '+self.key[self.question_list][1]+'</font>')
 		self.ui.radioButton.setEnabled(False)
 		self.ui.radioButton_2.setEnabled(False)
 		self.ui.radioButton_3.setEnabled(False)
 		self.ui.newQuestionButton.setEnabled(True)
 		
-	def question(self):
-		self.question = self.key.index(random.choice(self.key))
-		self.ui.question.setText(self.key[self.question][0])
+	def new_question(self):
+		self.question_chosen = self.key.index(random.choice(self.key))
+		self.ui.question.setText(self.key[self.question_chosen][0])
 		radiolist = [self.ui.radioButton,self.ui.radioButton_2,self.ui.radioButton_3]
 		#Set the correct key
 		radiorandom = radiolist.index(random.choice(radiolist))
-		radiolist[radiorandom].setText(self.key[self.question][1])
+		radiolist[radiorandom].setText(self.key[self.question_chosen][1])
 		radiolist.pop(radiorandom)
 		#Set the other key
 		radiorandom = radiolist.index(random.choice(radiolist))
