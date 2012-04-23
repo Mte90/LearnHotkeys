@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/LearnHotkeys/defdialog.ui'
 #
-# Created: Wed Apr 18 23:51:08 2012
+# Created: Mon Apr 23 22:25:21 2012
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -31,11 +31,11 @@ class Ui_DefDialog(object):
         self.label_2.setGeometry(QtCore.QRect(20, 20, 161, 21))
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.labelDef = QtGui.QLabel(self.groupBox)
-        self.labelDef.setGeometry(QtCore.QRect(20, 80, 161, 21))
+        self.labelDef.setGeometry(QtCore.QRect(20, 80, 331, 51))
         self.labelDef.setText(_fromUtf8(""))
         self.labelDef.setObjectName(_fromUtf8("labelDef"))
         self.label = QtGui.QLabel(DefDialog)
-        self.label.setGeometry(QtCore.QRect(140, 170, 111, 16))
+        self.label.setGeometry(QtCore.QRect(140, 190, 111, 16))
         self.label.setObjectName(_fromUtf8("label"))
 
         self.retranslateUi(DefDialog)

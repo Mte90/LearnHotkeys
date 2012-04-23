@@ -2,7 +2,7 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyQt4.QtXml import *
-import inspect, sys, os, random
+import sys, os, random
 
 from ui_mainwindow import Ui_MainWindow
 from defdialog import DefWindow
@@ -20,14 +20,14 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.radioButton.pressed.connect(lambda who=self.ui.radioButton: self.checkAnswer(who))
 		self.ui.radioButton_2.pressed.connect(lambda who=self.ui.radioButton_2: self.checkAnswer(who))
 		self.ui.radioButton_3.pressed.connect(lambda who=self.ui.radioButton_3: self.checkAnswer(who))
-		self.ui.newQuestionButton.pressed.connect(self.new_question)
+		self.ui.newQuestionButton.clicked.connect(self.new_question)
 		self.ui.openDef.clicked.connect(self.openDefDialog)
 		self.loadHotkeys()
 		self.ui.newQuestionButton.setEnabled(False)
 		self.show()
 
 	def loadHotkeys(self):
-		fname = os.path.dirname(inspect.getfile(inspect.currentframe())) + '/hotkeys/'+self.settings.value('file_name_default').toString()
+		fname = './hotkeys/'+self.settings.value('file_name_default').toString()
 		dom = QDomDocument()
 		error = None
 		fh = None
@@ -46,7 +46,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 				return False, error
 		root = dom.documentElement()
 		if not root.hasAttribute('fileversion'):
-			QMessageBox.information(self.window(), "LearnHotkeys","The file is not an LearnHotkeys definition file.")
+			QMessageBox.information(self.window(), "LearnHotkeys","The file "+self.settings.value('file_name_default').toString()+" is not an LearnHotkeys definition file.")
 			return False
 		self.ui.hotkeys_program.setText('<font style="font-weight:bold">'+root.attribute('software')+' - '+root.attribute('softwareversion')+'<font>')
 		child = root.firstChildElement('hotkey')
@@ -59,7 +59,8 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		window = QDialog()
 		ui = DefWindow()
 		ui.setupUi(window)
-		ui.exec_()
+		if ui.exec_() == 1:
+			self.loadHotkeys()
 
 	def checkAnswer(self, who):
 		if who.text() == self.key[self.question_chosen][1]:
