@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/LearnHotkeys/mainwindow.ui'
 #
-# Created: Mon Apr 23 22:59:23 2012
+# Created: Fri Apr 27 00:00:58 2012
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -27,12 +27,12 @@ class Ui_MainWindow(object):
         self.centralWidget = QtGui.QWidget(MainWindow)
         self.centralWidget.setObjectName(_fromUtf8("centralWidget"))
         self.question = QtGui.QLabel(self.centralWidget)
-        self.question.setGeometry(QtCore.QRect(10, 40, 471, 51))
+        self.question.setGeometry(QtCore.QRect(10, 40, 481, 51))
         self.question.setText(_fromUtf8(""))
         self.question.setAlignment(QtCore.Qt.AlignCenter)
         self.question.setObjectName(_fromUtf8("question"))
         self.hotkeys_program = QtGui.QLabel(self.centralWidget)
-        self.hotkeys_program.setGeometry(QtCore.QRect(10, 10, 481, 16))
+        self.hotkeys_program.setGeometry(QtCore.QRect(10, 10, 371, 16))
         self.hotkeys_program.setText(_fromUtf8(""))
         self.hotkeys_program.setObjectName(_fromUtf8("hotkeys_program"))
         self.groupBox = QtGui.QGroupBox(self.centralWidget)
@@ -63,6 +63,9 @@ class Ui_MainWindow(object):
         self.openDef = QtGui.QPushButton(self.centralWidget)
         self.openDef.setGeometry(QtCore.QRect(10, 220, 481, 23))
         self.openDef.setObjectName(_fromUtf8("openDef"))
+        self.openCS = QtGui.QPushButton(self.centralWidget)
+        self.openCS.setGeometry(QtCore.QRect(400, 10, 97, 23))
+        self.openCS.setObjectName(_fromUtf8("openCS"))
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)
@@ -76,4 +79,5 @@ class Ui_MainWindow(object):
         self.radioButton_2.setText(QtGui.QApplication.translate("MainWindow", "RadioButton", None, QtGui.QApplication.UnicodeUTF8))
         self.radioButton_3.setText(QtGui.QApplication.translate("MainWindow", "RadioButton", None, QtGui.QApplication.UnicodeUTF8))
         self.openDef.setText(QtGui.QApplication.translate("MainWindow", "Change Definition File", None, QtGui.QApplication.UnicodeUTF8))
+        self.openCS.setText(QtGui.QApplication.translate("MainWindow", "CheatSheet", None, QtGui.QApplication.UnicodeUTF8))
 

@@ -6,6 +6,7 @@ import sys, os, random
 
 from ui_mainwindow import Ui_MainWindow
 from defdialog import DefWindow
+from cheatsheet import CSWindow
 
 class MainWindow ( QMainWindow , Ui_MainWindow):
 
@@ -22,6 +23,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.radioButton_3.pressed.connect(lambda who=self.ui.radioButton_3: self.checkAnswer(who))
 		self.ui.newQuestionButton.clicked.connect(self.new_question)
 		self.ui.openDef.clicked.connect(self.openDefDialog)
+		self.ui.openCS.clicked.connect(self.openCSDialog)
 		self.loadHotkeys()
 		self.ui.newQuestionButton.setEnabled(False)
 		self.show()
@@ -61,6 +63,12 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		ui.setupUi(window)
 		if ui.exec_() == 1:
 			self.loadHotkeys()
+	
+	def openCSDialog(self):
+		window = QDialog()
+		ui = CSWindow()
+		ui.setupUi(window)
+		ui.exec_()
 
 	def checkAnswer(self, who):
 		if who.text() == self.key[self.question_chosen][1]:
