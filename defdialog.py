@@ -21,7 +21,6 @@ class DefWindow ( QDialog , Ui_DefDialog):
 			for name in files:
 			   filename = os.path.join(root, name)
 			   self.ui.comboDef.addItem(os.path.basename(filename))
-			   #self.def_file.append(filename)
 		if self.ui.comboDef.findText(self.settings.value('file_name_default').toString()) != -1:
 			self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default').toString()) )
 		self.ui.comboDef.currentIndexChanged.connect(self.comboDefChanged)
@@ -46,9 +45,10 @@ class DefWindow ( QDialog , Ui_DefDialog):
 				return False, error
 		root = dom.documentElement()
 		if not root.hasAttribute('fileversion'):
-			QMessageBox.information(self.window(), "LearnHotkeys","The file "+self.ui.comboDef.currentText()+" is not an LearnHotkeys definition file.")
+			QMessageBox.information(self.window(), "LearnHotkeys","The file {} is not an LearnHotkeys definition file." % self.ui.comboDef.currentText())
 			return False
-		self.ui.labelDef.setText('<font style="font-weight:bold">'+root.attribute('software')+' - '+root.attribute('softwareversion')+'<font><br>'+root.attribute('def')+' <a href="'+root.attribute('softwaresite')+'">'+root.attribute('softwaresite')+'</a>')
+		self.ui.labelDef.setText('<font style="font-weight:bold"> %s - %s<font><br>%s <br><a href="%s">%s</a>' \
+		% (root.attribute('software'),root.attribute('softwareversion'),root.attribute('def'),root.attribute('softwaresite'),root.attribute('softwaresite')) )
 		
 	def saveConfig(self):
 		self.settings.setValue("file_name_default", self.ui.comboDef.currentText())

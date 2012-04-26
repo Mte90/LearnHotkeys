@@ -46,9 +46,9 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 				return False, error
 		root = dom.documentElement()
 		if not root.hasAttribute('fileversion'):
-			QMessageBox.information(self.window(), "LearnHotkeys","The file "+self.settings.value('file_name_default').toString()+" is not an LearnHotkeys definition file.")
+			QMessageBox.information(self.window(), "LearnHotkeys","The file {} is not an LearnHotkeys definition file." % self.settings.value('file_name_default').toString())
 			return False
-		self.ui.hotkeys_program.setText('<font style="font-weight:bold">'+root.attribute('software')+' - '+root.attribute('softwareversion')+'<font>')
+		self.ui.hotkeys_program.setText('<font style="font-weight:bold">%s - %s<font>' % (root.attribute('software'),root.attribute('softwareversion')))
 		child = root.firstChildElement('hotkey')
 		while not child.isNull():
 			self.key.append([child.firstChildElement('question').text(),child.firstChildElement('key').text()])
@@ -66,7 +66,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		if who.text() == self.key[self.question_chosen][1]:
 			self.ui.result.setText('<font color="#00ff00" style="font-weight:bold">Correct answer</font>')
 		else:
-			self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer are '+self.key[self.question_chosen][1]+'</font>')
+			self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer are {}</font>' % self.key[self.question_chosen][1])
 		self.ui.radioButton.setEnabled(False)
 		self.ui.radioButton_2.setEnabled(False)
 		self.ui.radioButton_3.setEnabled(False)
