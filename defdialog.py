@@ -7,8 +7,7 @@ from ui_defdialog import Ui_DefDialog
 
 class DefWindow ( QDialog , Ui_DefDialog):
 	
-	def_file = []
-	settings = QSettings('settings.ini', QSettings.IniFormat)
+	settings = QSettings()
 	settings.setFallbacksEnabled(False)
 	
 	def __init__ ( self, parent = None ):

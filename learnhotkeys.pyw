@@ -11,7 +11,7 @@ from cheatsheet import CSWindow
 class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	key = []
-	settings = QSettings('settings.ini', QSettings.IniFormat)
+	settings = QSettings()
 	settings.setFallbacksEnabled(False)
 
 	def __init__ ( self, parent = None ):

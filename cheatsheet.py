@@ -7,7 +7,7 @@ from ui_cheatsheet import Ui_CSDialog
 
 class CSWindow ( QDialog , Ui_CSDialog):
 	
-	settings = QSettings('settings.ini', QSettings.IniFormat)
+	settings = QSettings()
 	settings.setFallbacksEnabled(False)
 	html_cs = ""
 	def __init__ ( self, parent = None ):

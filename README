@@ -5,7 +5,6 @@
  Status: Alpha
 
  ToDo Alpha:
-	move config file in ~/.config/learnhotkeys
 	more info on cheatsheet
 	better style on cheatsheet
 	update of hotkey file by git or site?
