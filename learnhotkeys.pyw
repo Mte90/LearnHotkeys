@@ -82,7 +82,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		
 	def new_question(self):
 		self.question_chosen = self.key.index(random.choice(self.key))
-		self.ui.question.setText(self.key[self.question_chosen][0])
+		self.ui.question.setText(self.key[self.question_chosen][0].replace(".",".<br>"))
 		radiolist = [self.ui.radioButton,self.ui.radioButton_2,self.ui.radioButton_3]
 		#Set the correct key
 		radiorandom = radiolist.index(random.choice(radiolist))

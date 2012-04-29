@@ -50,7 +50,7 @@ class CSWindow ( QDialog , Ui_CSDialog):
 		self.ui.csView.setHtml(self.html_cs)
 		
 	def saveHTML(self):
-	  filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()+'.html')
+	  filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()[:-4]+'.html')
 	  fname = open(filename, 'w')
-	  fname.write(self.html_cs)
+	  fname.write(self.html_cs.encode("utf-8"))
 	  fname.close() 
