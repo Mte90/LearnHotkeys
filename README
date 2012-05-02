@@ -5,8 +5,7 @@
  Status: Alpha
 
  ToDo Alpha:
-	more info on cheatsheet
-	better style on cheatsheet
+	style chooser for cheatsheet
 	update of hotkey file by git or site?
 
  ToDo Beta:
@@ -16,3 +15,6 @@
  Require:
  PyQT
  Python
+
+ Thanks to:
+ Fexys, oniontux

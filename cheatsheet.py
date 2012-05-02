@@ -10,7 +10,7 @@ class CSWindow ( QDialog , Ui_CSDialog):
 	settings = QSettings()
 	settings.setFallbacksEnabled(False)
 	html_cs = ""
-	html_style = "<style>table{ font-family: 'PT Sans','DejaVu Sans','Bitstream Vera Sans',Verdana,sans-serif;}</style>\n"
+	html_style = "<html>\n<head>\n<style>\n%s\n</style>\n</head>\n<body>\n"
 	html_thead = "\n<table><tr style='font-weight:bold'><td>Action</td><td>HotKey</td></tr>"
 	html_def = ""
 	def __init__ ( self, parent = None ):
@@ -50,12 +50,18 @@ class CSWindow ( QDialog , Ui_CSDialog):
 		while not child.isNull():
 			self.html_cs += "\n<tr><td>%s</td><td>%s</td></tr>" % (child.firstChildElement('question').text(),child.firstChildElement('key').text())
 			child = child.nextSiblingElement('hotkey')
-		self.html_cs += "</table>"
-		self.ui.csView.setHtml(self.html_style+self.html_thead+self.html_cs)
+		self.html_cs += "</table></body></html>"
+		self.ui.csView.setHtml((self.html_style % self.get_file_content('./style/blue-light.css'))+self.html_thead+self.html_cs)
 		
 	def saveHTML(self):
-	  filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()[:-4]+'.html')
-	  fname = open(filename, 'w')
-	  html = self.html_style+self.html_def+self.html_thead+self.html_cs
-	  fname.write(html.toUtf8()+"\n")
-	  fname.close() 
+		filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()[:-4]+'.html')
+		fname = open(filename, 'w')
+		html = (self.html_style% self.get_file_content('./style/blue-light.css'))+self.html_def+self.html_thead+self.html_cs
+		fname.write(html.toUtf8()+"\n")
+		fname.close() 
+	
+	def get_file_content(self,file):
+		f = open(file, 'r')
+		c = f.read()
+		f.close()
+		return c
