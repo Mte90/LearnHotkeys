@@ -58,7 +58,7 @@ class CSWindow ( QDialog , Ui_CSDialog):
 			QMessageBox.information(self.window(), "LearnHotkeys","The file {} is not an LearnHotkeys definition file." % self.settings.value('file_name_default').toString())
 			return False
 		self.html_def += root.attribute('software')+" - "+root.attribute('softwareversion')+" - "+root.attribute('def')+"<br>\n<a href='"+root.attribute('softwaresite')+"'>" \
-		+root.attribute('softwaresite')+"</a><br> CheatSheet version: "+root.attribute('fileversion')
+		+root.attribute('softwaresite')+"</a><br> CheatSheet version: "+root.attribute('fileversion')+"<br>"
 		child = root.firstChildElement('hotkey')
 		while not child.isNull():
 			self.html_cs += "\n<tr><td>%s</td><td>%s</td></tr>" % (child.firstChildElement('question').text(),child.firstChildElement('key').text())
