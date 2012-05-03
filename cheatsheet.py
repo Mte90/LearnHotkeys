@@ -9,6 +9,10 @@ class CSWindow ( QDialog , Ui_CSDialog):
 	
 	settings = QSettings()
 	settings.setFallbacksEnabled(False)
+	theme_path = "./style"
+	theme_folder = theme_path+'/'
+	hotkeys_path = "./hotkeys"
+	hotkeys_folder = hotkeys_path+'/'
 	html_cs = ""
 	html_style = "<html>\n<head>\n<style>\n%s\n</style>\n</head>\n<body>\n"
 	html_thead = "\n<table><tr style='font-weight:bold'><td>Action</td><td>HotKey</td></tr>"
@@ -19,11 +23,20 @@ class CSWindow ( QDialog , Ui_CSDialog):
 		self.ui.setupUi( self )
 		self.ui.saveButton.clicked.connect(self.saveHTML)
 		self.ui.closeButton.clicked.connect(self.accept)
+		self.ui.themeChooser.currentIndexChanged.connect(self.saveConfig)
+		for root, dirs, files in os.walk(self.theme_path):
+			for name in files:
+				filename = os.path.join(root, name)
+				self.ui.themeChooser.addItem(os.path.basename(filename))
+		if not self.settings.value('theme').toString():
+			self.saveConfig()
+		if self.ui.themeChooser.findText(self.settings.value('theme').toString()) != -1:
+			self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()) )
 		self.loadHotkeys()
 		self.show()
 
 	def loadHotkeys(self):
-		fname = './hotkeys/'+self.settings.value('file_name_default').toString()
+		fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
 		dom = QDomDocument()
 		error = None
 		fh = None
@@ -51,12 +64,12 @@ class CSWindow ( QDialog , Ui_CSDialog):
 			self.html_cs += "\n<tr><td>%s</td><td>%s</td></tr>" % (child.firstChildElement('question').text(),child.firstChildElement('key').text())
 			child = child.nextSiblingElement('hotkey')
 		self.html_cs += "</table></body></html>"
-		self.ui.csView.setHtml((self.html_style % self.get_file_content('./style/blue-light.css'))+self.html_thead+self.html_cs)
+		self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)
 		
 	def saveHTML(self):
 		filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()[:-4]+'.html')
 		fname = open(filename, 'w')
-		html = (self.html_style% self.get_file_content('./style/blue-light.css'))+self.html_def+self.html_thead+self.html_cs
+		html = (self.html_style% self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_def+self.html_thead+self.html_cs
 		fname.write(html.toUtf8()+"\n")
 		fname.close() 
 	
@@ -65,3 +78,6 @@ class CSWindow ( QDialog , Ui_CSDialog):
 		c = f.read()
 		f.close()
 		return c
+		
+	def saveConfig(self):
+		self.settings.setValue("theme", self.ui.themeChooser.currentText())

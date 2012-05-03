@@ -11,6 +11,8 @@ from cheatsheet import CSWindow
 class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	key = []
+	hotkeys_path = "./hotkeys"
+	hotkeys_folder = hotkeys_path+'/'
 	settings = QSettings()
 	settings.setFallbacksEnabled(False)
 
@@ -29,7 +31,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.show()
 
 	def loadHotkeys(self):
-		fname = './hotkeys/'+self.settings.value('file_name_default').toString()
+		fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
 		dom = QDomDocument()
 		error = None
 		fh = None
