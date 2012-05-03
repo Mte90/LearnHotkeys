@@ -23,7 +23,6 @@ class CSWindow ( QDialog , Ui_CSDialog):
 		self.ui.setupUi( self )
 		self.ui.saveButton.clicked.connect(self.saveHTML)
 		self.ui.closeButton.clicked.connect(self.accept)
-		self.ui.themeChooser.currentIndexChanged.connect(self.saveConfig)
 		for root, dirs, files in os.walk(self.theme_path):
 			for name in files:
 				filename = os.path.join(root, name)
@@ -32,6 +31,7 @@ class CSWindow ( QDialog , Ui_CSDialog):
 			self.saveConfig()
 		if self.ui.themeChooser.findText(self.settings.value('theme').toString()) != -1:
 			self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()) )
+		self.ui.themeChooser.currentIndexChanged.connect(self.saveConfig)
 		self.loadHotkeys()
 		self.show()
 
@@ -81,3 +81,4 @@ class CSWindow ( QDialog , Ui_CSDialog):
 		
 	def saveConfig(self):
 		self.settings.setValue("theme", self.ui.themeChooser.currentText())
+		self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)

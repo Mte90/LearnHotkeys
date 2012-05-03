@@ -1,13 +1,11 @@
 /*Version 1.0 - Soft Grey Theme CheatSheet
- B y Mte90 - http://www.mte90.net */                          *
- body {font-family: 'PT Sans','DejaVu Sans','Bitstream Vera Sans',Verdana,sans-serif;}
- table {border-collapse: collapse;box-shadow: 0 1px 1px #ccc;border-spacing: 0;}
- table td {padding:6px;font-size: 14px;border:1px solid #222;border-bottom:1px solid #444;}
- table tr:first-child td {font-size:16px;background-color: rgb(127, 210, 255);border-left:none;text-transform: uppercase;color: #444;border-radius: 5px 0 0 0;border-top: none;text-shadow:1px 1px 1px #fff;border-bottom:5px solid #444;}
- table tr:first-child td:last-child {border-top: none; border-radius: 0 5px 0 0;border-right:none;}
- table tr:nth-child(odd) {background-color:#555;color:#f0f0f0;background:-webkit-gradient(linear,left bottom,left top,color-stop(0.39, rgb(85,85,85)),color-stop(0.7, rgb(105,105,105)));background:-moz-linear-gradient(center bottom,rgb(85,85,85) 39%,rgb(105,105,105) 70%);text-shadow:1px 1px 1px #000;}
- table tr:nth-child(even) {border-bottom:1px solid #444;color:#444;background:-webkit-gradient(linear,left bottom,left top,color-stop(0.39, rgb(189,189,189)),color-stop(0.7, rgb(224,224,224)));background:-moz-linear-gradient(center bottom,rgb(189,189,189) 39%,rgb(224,224,224) 70%);text-shadow:1px 1px 1px #fff;}
- table tr:first-child {background:none;}
- table tr:hover {background: #444;color:#f0f0f0;-o-transition: all 0.1s ease-in-out;-webkit-transition: all 0.1s ease-in-out;-moz-transition: all 0.1s ease-in-out;-ms-transition: all 0.1s ease-in-out;transition: all 0.1s ease-in-out;text-shadow:1px 1px 1px #000;}
- table tr:last-child td:first-child {border-radius: 0 0 0 5px;}
- table tr:last-child td:last-child {border-radius: 0 0 5px 0;}
+ By Mte90 - http://www.mte90.net */
+body {font-family: 'PT Sans','DejaVu Sans','Bitstream Vera Sans',Verdana,sans-serif;}
+table {border-collapse: collapse;box-shadow: 0 1px 1px #ccc;border-spacing: 0;}
+table td {padding:6px;font-size: 14px;border:1px solid #222;border-bottom:1px solid #444;}
+table tr:first-child td {font-size:16px;background-color: rgb(127, 210, 255);border-left:none;text-transform: uppercase;color: #444;border-radius: 5px 0 0 0;border-top: none;text-shadow:1px 1px 1px #fff;border-bottom:5px solid #444;}
+table tr:first-child td:last-child {border-top: none; border-radius: 0 5px 0 0;border-right:none;}
+table tr:nth-child(odd) {background-color:#555;color:#f0f0f0;background:-webkit-gradient(linear,left bottom,left top,color-stop(0.39, rgb(85,85,85)),color-stop(0.7, rgb(105,105,105)));background:-moz-linear-gradient(center bottom,rgb(85,85,85) 39%,rgb(105,105,105) 70%);text-shadow:1px 1px 1px #000;}
+table tr:nth-child(even) {border-bottom:1px solid #444;color:#444;background:-webkit-gradient(linear,left bottom,left top,color-stop(0.39, rgb(189,189,189)),color-stop(0.7, rgb(224,224,224)));background:-moz-linear-gradient(center bottom,rgb(189,189,189) 39%,rgb(224,224,224) 70%);text-shadow:1px 1px 1px #fff;}
+table tr:first-child {background:none;}
+table tr:hover {background: #444;color:#f0f0f0;-o-transition: all 0.1s ease-in-out;-webkit-transition: all 0.1s ease-in-out;-moz-transition: all 0.1s ease-in-out;-ms-transition: all 0.1s ease-in-out;transition: all 0.1s ease-in-out;text-shadow:1px 1px 1px #000;}
