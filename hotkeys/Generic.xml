@@ -32,4 +32,8 @@
 			<question>Select All</question>
 			<key>Ctrl+A</key>
 		</hotkey>
+		<hotkey>
+			<question>Open file</question>
+			<key>Ctrl+O</key>
+		</hotkey>
 </software>
