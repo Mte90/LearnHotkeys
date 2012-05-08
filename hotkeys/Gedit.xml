@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="X.X" def="Gedit hotkeys" software="Gedit" softwaresite="http://projects.gnome.org/gedit/">
+		<hotkey>
+			<question>Switches to the next tab to the left</question>
+			<key>Ctrl + Alt + PageUp</key>
+		</hotkey>
+		<hotkey>
+			<question>Switches to the next tab to the right</question>
+			<key>Ctrl + Alt + PageDown</key>
+		</hotkey>
+<hotkey>
+			<question>Close tab</question>
+			<key>Ctrl + W</key>
+		</hotkey>
+<hotkey>
+			<question>Save all tabs</question>
+			<key>Ctrl + Shift + L</key>
+		</hotkey>
+<hotkey>
+			<question>Close all tabs</question>
+			<key>Ctrl + Shift + W</key>
+		</hotkey>
+<hotkey>
+			<question>Jump to 'number' tab.</question>
+			<key>Alt + number</key>
+		</hotkey>
+<hotkey>
+			<question>Create a new document</question>
+			<key>Ctrl + n</key>
+		</hotkey>
+<hotkey>
+			<question>Open a document</question>
+			<key>Ctrl + o</key>
+		</hotkey>
+<hotkey>
+			<question>Open a location</question>
+			<key>Ctrl + l</key>
+		</hotkey>
+<hotkey>
+			<question>Save the current document to disk</question>
+			<key>Ctrl + s</key>
+		</hotkey>
+<hotkey>
+			<question>Save the current document with a new filename</question>
+			<key>Ctrl + Shift + s</key>
+		</hotkey>
+<hotkey>
+			<question>Print the current document</question>
+			<key>Ctrl + p</key>
+		</hotkey>
+<hotkey>
+			<question>Print preview</question>
+			<key>Ctrl + Shift + p</key>
+		</hotkey>
+<hotkey>
+			<question>Close the current document</question>
+			<key>Ctrl + w</key>
+		</hotkey>
+<hotkey>
+			<question>Quit Gedit</question>
+			<key>Ctrl + q</key>
+		</hotkey>
+<hotkey>
+			<question>Undo the last action</question>
+			<key>Ctrl + z</key>
+		</hotkey>
+<hotkey>
+			<question>Redo the last action</question>
+			<key>Ctrl + Shift + z</key>
+		</hotkey>
+<hotkey>
+			<question>Cut the selected text or region and place it on the clipboard</question>
+			<key>Ctrl + x</key>
+		</hotkey>
+<hotkey>
+			<question>Copy the selected text or region onto the clipboard</question>
+			<key>Ctrl + c</key>
+		</hotkey>
+<hotkey>
+			<question>Paste the contents of the clipboard</question>
+			<key>Ctrl + v</key>
+		</hotkey>
+<hotkey>
+			<question>Select all</question>
+			<key>Ctrl + a</key>
+		</hotkey>
+<hotkey>
+			<question>Delete the line</question>
+			<key>Ctrl + d</key>
+		</hotkey>
+<hotkey>
+			<question>Move the cursor to the beginning of the word or previous word if it's already in the beginning of the current one</question>
+			<key>Ctrl + left</key>
+		</hotkey>
+<hotkey>
+			<question>Move the cursor to the end of the word or next word if it's already in the end of the current one</question>
+			<key>Ctrl + right</key>
+		</hotkey>
+<hotkey>
+			<question>Show/hide the side pane</question>
+			<key>F9</key>
+		</hotkey>
+<hotkey>
+			<question>Show/hide the bottom pane</question>
+			<key>Ctrl + F9</key>
+		</hotkey>
+<hotkey>
+			<question>Find a string</question>
+			<key>Ctrl + f</key>
+		</hotkey>
+<hotkey>
+			<question>Find the next instance of the string</question>
+			<key>Ctrl + g</key>
+		</hotkey>
+<hotkey>
+			<question>Interactive search</question>
+			<key>Ctrl + k</key>
+		</hotkey>
+<hotkey>
+			<question>Search and replace</question>
+			<key>Ctrl + h</key>
+		</hotkey>
+<hotkey>
+			<question>Clear highlight</question>
+			<key>Ctrl + Shift + h</key>
+		</hotkey>
+<hotkey>
+			<question>Goto line</question>
+			<key>Ctrl + i</key>
+		</hotkey>
+<hotkey>
+			<question>hackme.torengine.it</question>
+			<key>F7</key>
+		</hotkey>
+<hotkey>
+			<question>Remove trailing spaces (with plugin)</question>
+			<key>Alt + F12</key>
+		</hotkey>
+<hotkey>
+			<question>Indent (with plugin)</question>
+			<key>Ctrl + t</key>
+		</hotkey>
+<hotkey>
+			<question>Remove Indent (with plugin)</question>
+			<key>Ctrl + Shift + t</key>
+		</hotkey>
+<hotkey>
+			<question>Run "make" in current directory (with plugin)</question>
+			<key>F8</key>
+		</hotkey>
+<hotkey>
+			<question>Directory listing (with plugin)</question>
+			<key>Ctrl + Shift + d</key>
+		</hotkey>
+<hotkey>
+			<question>Load Gedit's online help document</question>
+			<key>F1</key>
+		</hotkey>
+</software>
