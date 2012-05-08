@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>351</width>
-    <height>300</height>
+    <width>421</width>
+    <height>371</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,12 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>331</width>
-     <height>251</height>
+     <width>401</width>
+     <height>321</height>
     </rect>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
    </property>
    <property name="url">
     <url>
@@ -31,8 +34,8 @@
   <widget class="QPushButton" name="saveButton">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>270</y>
+     <x>210</x>
+     <y>340</y>
      <width>97</width>
      <height>23</height>
     </rect>
@@ -44,14 +47,24 @@
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>270</y>
+     <x>320</x>
+     <y>340</y>
      <width>97</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
     <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="themeChooser">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>340</y>
+     <width>191</width>
+     <height>22</height>
+    </rect>
    </property>
   </widget>
  </widget>

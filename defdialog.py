@@ -7,8 +7,9 @@ from ui_defdialog import Ui_DefDialog
 
 class DefWindow ( QDialog , Ui_DefDialog):
 	
-	def_file = []
-	settings = QSettings('settings.ini', QSettings.IniFormat)
+	hotkeys_path = "./hotkeys"
+	hotkeys_folder = hotkeys_path+'/'
+	settings = QSettings()
 	settings.setFallbacksEnabled(False)
 	
 	def __init__ ( self, parent = None ):
@@ -17,16 +18,16 @@ class DefWindow ( QDialog , Ui_DefDialog):
 		self.ui.setupUi( self )
 		self.ui.pushApply.clicked.connect(self.saveConfig)
 		self.show()
-		for root, dirs, files in os.walk('./hotkeys'):
+		for root, dirs, files in os.walk(self.hotkeys_path):
 			for name in files:
-			   filename = os.path.join(root, name)
-			   self.ui.comboDef.addItem(os.path.basename(filename))
+				filename = os.path.join(root, name)
+				self.ui.comboDef.addItem(os.path.basename(filename))
 		if self.ui.comboDef.findText(self.settings.value('file_name_default').toString()) != -1:
 			self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default').toString()) )
 		self.ui.comboDef.currentIndexChanged.connect(self.comboDefChanged)
 		
 	def comboDefChanged(self, file):
-		fname = './hotkeys/'+self.ui.comboDef.currentText()
+		fname = self.hotkeys_folder+self.ui.comboDef.currentText()
 		dom = QDomDocument()
 		error = None
 		fh = None

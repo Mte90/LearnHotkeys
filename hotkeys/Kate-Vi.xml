@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="3.8.*" def="Kate Editor - Vi Mode" software="Kate - Vi Mode" softwaresite="http://kate-editor.org">
+		<hotkey>
+			<question>Insert Mode and End Of Line</question>
+			<key>A</key>
+		</hotkey>
+		<hotkey>
+			<question>Insert Mode</question>
+			<key>A</key>
+		</hotkey>
+		<hotkey>
+			<question>First row</question>
+			<key>gg</key>
+		</hotkey>
+		<hotkey>
+			<question>Last Row</question>
+			<key>G</key>
+		</hotkey>
+		<hotkey>
+			<question>Start of Row</question>
+			<key>^</key>
+		</hotkey>
+		<hotkey>
+			<question>Word by Word to the end of row</question>
+			<key>w</key>
+		</hotkey>
+		<hotkey>
+			<question>Word by Word to the start of row</question>
+			<key>b</key>
+		</hotkey>
+		<hotkey>
+			<question>Cursor at the end of the word</question>
+			<key>e</key>
+		</hotkey>
+		<hotkey>
+			<question>Cursor at the start of the word</question>
+			<key>ge</key>
+		</hotkey>
+		<hotkey>
+			<question>Remove the rest of the line starting by the cursor</question>
+			<key>D</key>
+		</hotkey>
+		<hotkey>
+			<question>Merge the current row with the above</question>
+			<key>J</key>
+		</hotkey>
+		<hotkey>
+			<question>Duplicate the row</question>
+			<key>p</key>
+		</hotkey>
+		<hotkey>
+			<question>Clean the current row</question>
+			<key>cc</key>
+		</hotkey>
+		<hotkey>
+			<question>New row</question>
+			<key>o</key>
+		</hotkey>
+		<hotkey>
+			<question>Replace the char of cursor</question>
+			<key>r</key>
+		</hotkey>
+		<hotkey>
+			<question>Remove indenting</question>
+			<key><<</key>
+		</hotkey>
+		<hotkey>
+			<question>Add indenting</question>
+			<key>>></key>
+		</hotkey>
+</software>

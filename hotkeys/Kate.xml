@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="3.8.*" def="Kate Editor" software="Kate" softwaresite="http://kate-editor.org">
+		<hotkey>
+			<question>Delete word on right</question>
+			<key>Ctrl+Canc</key>
+		</hotkey>
+		<hotkey>
+			<question>Delete word on left</question>
+			<key>Ctrl+BackSpace</key>
+		</hotkey>
+		<hotkey>
+			<question>Delete row</question>
+			<key>Ctrl+K</key>
+		</hotkey>
+		<hotkey>
+			<question>Comment</question>
+			<key>Ctrl+D</key>
+		</hotkey>
+		<hotkey>
+			<question>DeComment</question>
+			<key>Ctrl+Shifh+D</key>
+		</hotkey>
+		<hotkey>
+			<question>Duplicate the row selected above</question>
+			<key>Ctrl+Alt+Up</key>
+		</hotkey>
+		<hotkey>
+			<question>Duplicate the row selected below</question>
+			<key>Ctrl+Alt+Down</key>
+		</hotkey>
+		<hotkey>
+			<question>Check Spelling</question>
+			<key>Ctrl+Shift+O</key>
+		</hotkey>
+		<hotkey>
+			<question>Contract the top level nodes</question>
+			<key>Ctrl+Shift+-</key>
+		</hotkey>
+		<hotkey>
+			<question>Contract the actual node</question>
+			<key>Ctrl+-</key>
+		</hotkey>
+		<hotkey>
+			<question>Expand the top level nodes</question>
+			<key>Ctrl+Shift++</key>
+		</hotkey>
+		<hotkey>
+			<question>Expand the actual node</question>
+			<key>Ctrl++</key>
+		</hotkey>
+		<hotkey>
+			<question>Intelligent Wrap</question>
+			<key>Shift+Enter</key>
+		</hotkey>
+		<hotkey>
+			<question>Code Autocomplete</question>
+			<key>Ctrl+Space</key>
+		</hotkey>
+		<hotkey>
+			<question>Select mode by block</question>
+			<key>Ctrl+Shift+B</key>
+		</hotkey>
+		<hotkey>
+			<question>Replace</question>
+			<key>Ctrl+R</key>
+		</hotkey>
+		<hotkey>
+			<question>Go to line number</question>
+			<key>Ctrl+G</key>
+		</hotkey>
+</software>
