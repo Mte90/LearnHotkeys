@@ -26,75 +26,75 @@
 		</hotkey>
 <hotkey>
 			<question>Create a new document</question>
-			<key>Ctrl + n</key>
+			<key>Ctrl + N</key>
 		</hotkey>
 <hotkey>
 			<question>Open a document</question>
-			<key>Ctrl + o</key>
+			<key>Ctrl + O</key>
 		</hotkey>
 <hotkey>
 			<question>Open a location</question>
-			<key>Ctrl + l</key>
+			<key>Ctrl + L</key>
 		</hotkey>
 <hotkey>
 			<question>Save the current document to disk</question>
-			<key>Ctrl + s</key>
+			<key>Ctrl + S</key>
 		</hotkey>
 <hotkey>
 			<question>Save the current document with a new filename</question>
-			<key>Ctrl + Shift + s</key>
+			<key>Ctrl + Shift + S</key>
 		</hotkey>
 <hotkey>
 			<question>Print the current document</question>
-			<key>Ctrl + p</key>
+			<key>Ctrl + P</key>
 		</hotkey>
 <hotkey>
 			<question>Print preview</question>
-			<key>Ctrl + Shift + p</key>
+			<key>Ctrl + Shift + P</key>
 		</hotkey>
 <hotkey>
 			<question>Close the current document</question>
-			<key>Ctrl + w</key>
+			<key>Ctrl + W</key>
 		</hotkey>
 <hotkey>
 			<question>Quit Gedit</question>
-			<key>Ctrl + q</key>
+			<key>Ctrl + Q</key>
 		</hotkey>
 <hotkey>
 			<question>Undo the last action</question>
-			<key>Ctrl + z</key>
+			<key>Ctrl + Z</key>
 		</hotkey>
 <hotkey>
 			<question>Redo the last action</question>
-			<key>Ctrl + Shift + z</key>
+			<key>Ctrl + Shift + Z</key>
 		</hotkey>
 <hotkey>
 			<question>Cut the selected text or region and place it on the clipboard</question>
-			<key>Ctrl + x</key>
+			<key>Ctrl + X</key>
 		</hotkey>
 <hotkey>
 			<question>Copy the selected text or region onto the clipboard</question>
-			<key>Ctrl + c</key>
+			<key>Ctrl + C</key>
 		</hotkey>
 <hotkey>
 			<question>Paste the contents of the clipboard</question>
-			<key>Ctrl + v</key>
+			<key>Ctrl + V</key>
 		</hotkey>
 <hotkey>
 			<question>Select all</question>
-			<key>Ctrl + a</key>
+			<key>Ctrl + A</key>
 		</hotkey>
 <hotkey>
 			<question>Delete the line</question>
-			<key>Ctrl + d</key>
+			<key>Ctrl + D</key>
 		</hotkey>
 <hotkey>
 			<question>Move the cursor to the beginning of the word or previous word if it's already in the beginning of the current one</question>
-			<key>Ctrl + left</key>
+			<key>Ctrl + Left</key>
 		</hotkey>
 <hotkey>
 			<question>Move the cursor to the end of the word or next word if it's already in the end of the current one</question>
-			<key>Ctrl + right</key>
+			<key>Ctrl + Right</key>
 		</hotkey>
 <hotkey>
 			<question>Show/hide the side pane</question>
@@ -106,27 +106,27 @@
 		</hotkey>
 <hotkey>
 			<question>Find a string</question>
-			<key>Ctrl + f</key>
+			<key>Ctrl + F</key>
 		</hotkey>
 <hotkey>
 			<question>Find the next instance of the string</question>
-			<key>Ctrl + g</key>
+			<key>Ctrl + G</key>
 		</hotkey>
 <hotkey>
 			<question>Interactive search</question>
-			<key>Ctrl + k</key>
+			<key>Ctrl + K</key>
 		</hotkey>
 <hotkey>
 			<question>Search and replace</question>
-			<key>Ctrl + h</key>
+			<key>Ctrl + H</key>
 		</hotkey>
 <hotkey>
 			<question>Clear highlight</question>
-			<key>Ctrl + Shift + h</key>
+			<key>Ctrl + Shift + H</key>
 		</hotkey>
 <hotkey>
 			<question>Goto line</question>
-			<key>Ctrl + i</key>
+			<key>Ctrl + I</key>
 		</hotkey>
 <hotkey>
 			<question>hackme.torengine.it</question>
@@ -138,11 +138,11 @@
 		</hotkey>
 <hotkey>
 			<question>Indent (with plugin)</question>
-			<key>Ctrl + t</key>
+			<key>Ctrl + T</key>
 		</hotkey>
 <hotkey>
 			<question>Remove Indent (with plugin)</question>
-			<key>Ctrl + Shift + t</key>
+			<key>Ctrl + Shift + T</key>
 		</hotkey>
 <hotkey>
 			<question>Run "make" in current directory (with plugin)</question>
@@ -150,7 +150,7 @@
 		</hotkey>
 <hotkey>
 			<question>Directory listing (with plugin)</question>
-			<key>Ctrl + Shift + d</key>
+			<key>Ctrl + Shift + D</key>
 		</hotkey>
 <hotkey>
 			<question>Load Gedit's online help document</question>
