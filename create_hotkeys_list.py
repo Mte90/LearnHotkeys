@@ -29,7 +29,7 @@ for root, dirs, files in os.walk(hotkeys_path):
 					print(error)
 			if not dom.documentElement().hasAttribute('fileversion'):
 				print("LearnHotkeys","The file {} is not an LearnHotkeys definition file." % fname)
-			list_hotkeys = list_hotkeys + name + "|" + dom.documentElement().attribute('software') + "|" + dom.documentElement().attribute('softwareversion') + "|" + dom.documentElement().attribute('def')+'\n'
+			list_hotkeys = list_hotkeys + name + "|" + dom.documentElement().attribute('software') + "|" + dom.documentElement().attribute('fileversion') + "|" + dom.documentElement().attribute('softwareversion') + "|" + dom.documentElement().attribute('def')+'\n'
 
 f = open(hotkeys_folder + 'list','w+')
 f.write(list_hotkeys)
