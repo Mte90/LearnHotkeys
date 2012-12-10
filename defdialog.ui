@@ -88,7 +88,7 @@
     <string>Update List</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="listWidget">
+  <widget class="QListView" name="listUpdate">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -96,6 +96,9 @@
      <width>371</width>
      <height>111</height>
     </rect>
+   </property>
+   <property name="showDropIndicator" stdset="0">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

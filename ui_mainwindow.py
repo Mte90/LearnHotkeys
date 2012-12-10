@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/mainwindow.ui'
 #
-# Created: Mon Dec 10 23:14:35 2012
+# Created: Tue Dec 11 00:20:15 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -57,7 +57,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.question.sizePolicy().hasHeightForWidth())
         self.question.setSizePolicy(sizePolicy)
-        self.question.setMinimumSize(QtCore.QSize(460, 80))
+        self.question.setMinimumSize(QtCore.QSize(480, 80))
         self.question.setText(_fromUtf8(""))
         self.question.setAlignment(QtCore.Qt.AlignCenter)
         self.question.setObjectName(_fromUtf8("question"))

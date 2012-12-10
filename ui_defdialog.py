@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/defdialog.ui'
 #
-# Created: Mon Dec 10 23:12:00 2012
+# Created: Tue Dec 11 00:23:22 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -37,9 +37,10 @@ class Ui_DefDialog(object):
         self.pushUpdate = QtGui.QPushButton(DefDialog)
         self.pushUpdate.setGeometry(QtCore.QRect(190, 270, 94, 25))
         self.pushUpdate.setObjectName(_fromUtf8("pushUpdate"))
-        self.listWidget = QtGui.QListWidget(DefDialog)
-        self.listWidget.setGeometry(QtCore.QRect(10, 150, 371, 111))
-        self.listWidget.setObjectName(_fromUtf8("listWidget"))
+        self.listUpdate = QtGui.QListView(DefDialog)
+        self.listUpdate.setGeometry(QtCore.QRect(10, 150, 371, 111))
+        self.listUpdate.setProperty("showDropIndicator", False)
+        self.listUpdate.setObjectName(_fromUtf8("listUpdate"))
 
         self.retranslateUi(DefDialog)
         QtCore.QMetaObject.connectSlotsByName(DefDialog)
