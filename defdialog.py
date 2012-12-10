@@ -37,6 +37,35 @@ class DefWindow ( QDialog , Ui_DefDialog):
 
 	def comboDefChanged(self):
 		fname = self.hotkeys_folder+self.ui.comboDef.currentText()
+		root = self.syntaxParser(self.ui.comboDef.currentText())
+		self.ui.labelDef.setText('<font style="font-weight:bold"> %s - %s<font><br>%s <br><a href="%s">%s</a>' \
+		% (root.attribute('software'),root.attribute('softwareversion'),root.attribute('def'),root.attribute('softwaresite'),root.attribute('softwaresite')))
+
+	def saveConfig(self):
+		self.settings.setValue("file_name_default", self.ui.comboDef.currentText())
+		self.accept()
+
+	def downloadList(self):
+		urllib.urlretrieve('https://raw.github.com/Mte90/LearnHotkeys/master/hotkeys/list', self.hotkeys_folder+'list')
+
+	def parseList(self):
+		model = QStandardItemModel()
+		logfile = open(self.hotkeys_folder+'list', "r").readlines()
+		for line in logfile:
+			line = line.replace('\n','').split('|')
+			root = self.syntaxParser(line[0])
+			if root.attribute('fileversion') != line[2]:
+				item = QStandardItem('New! ' + line[1] + ' - Syntax ' + line[2] + ' - ' + 'Software ' + line[3])
+			else:
+				item = QStandardItem(line[1] + ' - Syntax ' + line[2] + ' - ' + 'Software ' + line[3])
+			item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
+			item.setData(QVariant(Qt.Checked), Qt.CheckStateRole)
+			model.appendRow(item)
+		self.ui.listUpdate.setModel(model)
+		pass
+
+	def syntaxParser(self,file):
+		fname = self.hotkeys_folder+file
 		dom = QDomDocument()
 		error = None
 		fh = None
@@ -55,26 +84,6 @@ class DefWindow ( QDialog , Ui_DefDialog):
 				return False, error
 		root = dom.documentElement()
 		if not root.hasAttribute('fileversion'):
-			QMessageBox.information(self.window(), "LearnHotkeys","The file {} is not an LearnHotkeys definition file." % self.ui.comboDef.currentText())
+			QMessageBox.information(self.window(), "LearnHotkeys","The file {} is not an LearnHotkeys definition file." % file)
 			return False
-		self.ui.labelDef.setText('<font style="font-weight:bold"> %s - %s<font><br>%s <br><a href="%s">%s</a>' \
-		% (root.attribute('software'),root.attribute('softwareversion'),root.attribute('def'),root.attribute('softwaresite'),root.attribute('softwaresite')))
-
-	def saveConfig(self):
-		self.settings.setValue("file_name_default", self.ui.comboDef.currentText())
-		self.accept()
-
-	def downloadList(self):
-		urllib.urlretrieve('https://raw.github.com/Mte90/LearnHotkeys/master/hotkeys/list', self.hotkeys_folder+'list')
-
-	def parseList(self):
-		model = QStandardItemModel()
-		logfile = open(self.hotkeys_folder+'list', "r").readlines()
-		for line in logfile:
-			line = line.replace('\n','').split('|')
-			item = QStandardItem(line[1] + ' - Syntax ' + line[2] + ' - ' + 'Software ' + line[3])
-			item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
-			item.setData(QVariant(Qt.Checked), Qt.CheckStateRole)
-			model.appendRow(item)
-		self.ui.listUpdate.setModel(model)
-		pass
+		return root
