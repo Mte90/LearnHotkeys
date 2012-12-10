@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
-from PyQt4.QtXml import * 
+from PyQt4.QtXml import *
 import sys, os
 from ui_cheatsheet import Ui_CSDialog
 
 class CSWindow ( QDialog , Ui_CSDialog):
-	
+
 	settings = QSettings()
 	settings.setFallbacksEnabled(False)
 	theme_path = "./style"
@@ -29,8 +29,11 @@ class CSWindow ( QDialog , Ui_CSDialog):
 				self.ui.themeChooser.addItem(os.path.basename(filename))
 		if not self.settings.value('theme').toString():
 			self.saveConfig()
-		if self.ui.themeChooser.findText(self.settings.value('theme').toString()) != -1:
-			self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()) )
+		if self.ui.themeChooser.findText(self.settings.value('theme')) != -1:
+			if sys.version_info < (3, 0):
+				self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()) )
+			else:
+				self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme')) )
 		self.ui.themeChooser.currentIndexChanged.connect(self.saveConfig)
 		self.loadHotkeys()
 		self.show()
@@ -43,10 +46,10 @@ class CSWindow ( QDialog , Ui_CSDialog):
 		try:
 			fh = QFile(fname)
 			if not fh.open(QIODevice.ReadOnly):
-				raise IOError, unicode(fh.errorString())
+				print(IOError, unicode(fh.errorString()))
 			if not dom.setContent(fh):
-				raise ValueError, "could not parse XML"
-		except (IOError, OSError, ValueError), e:
+				print(ValueError, "could not parse XML")
+		except (IOError, OSError, ValueError) as e:
 			error = "Failed to import: {0}".format(e)
 		finally:
 			if fh is not None:
@@ -58,27 +61,27 @@ class CSWindow ( QDialog , Ui_CSDialog):
 			QMessageBox.information(self.window(), "LearnHotkeys","The file {} is not an LearnHotkeys definition file." % self.settings.value('file_name_default').toString())
 			return False
 		self.html_def += root.attribute('software')+" - "+root.attribute('softwareversion')+" - "+root.attribute('def')+"<br>\n<a href='"+root.attribute('softwaresite')+"'>" \
-		+root.attribute('softwaresite')+"</a><br> CheatSheet version: "+root.attribute('fileversion')+"<br>"
+		+root.attribute('softwaresite')+"</a><br> CheatSheet version: "+root.attribute('fileversion')+"<br><br>"
 		child = root.firstChildElement('hotkey')
 		while not child.isNull():
 			self.html_cs += "\n<tr><td>%s</td><td>%s</td></tr>" % (child.firstChildElement('question').text(),child.firstChildElement('key').text())
 			child = child.nextSiblingElement('hotkey')
 		self.html_cs += "</table></body></html>"
 		self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)
-		
+
 	def saveHTML(self):
 		filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()[:-4]+'.html')
 		fname = open(filename, 'w')
 		html = (self.html_style% self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_def+self.html_thead+self.html_cs
 		fname.write(html.toUtf8()+"\n")
-		fname.close() 
-	
+		fname.close()
+
 	def get_file_content(self,file):
 		f = open(file, 'r')
 		c = f.read()
 		f.close()
 		return c
-		
+
 	def saveConfig(self):
 		self.settings.setValue("theme", self.ui.themeChooser.currentText())
 		self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)

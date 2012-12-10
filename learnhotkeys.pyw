@@ -36,8 +36,11 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	def loadHotkeys(self):
 		#check if hotkeys was choosen
-		if self.settings.value('file_name_default').toString() != "":
-			fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
+		if self.settings.value('file_name_default') != "":
+			if sys.version_info < (3, 0):
+				fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
+			else:
+				fname = self.hotkeys_folder+self.settings.value('file_name_default')
 		else:
 			fname = self.hotkeys_folder+'Bash.xml'
 		#load xml file
@@ -47,10 +50,10 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		try:
 			fh = QFile(fname)
 			if not fh.open(QIODevice.ReadOnly):
-				raise IOError, unicode(fh.errorString())
+				print(IOError, unicode(fh.errorString()))
 			if not dom.setContent(fh):
-				raise ValueError, "could not parse XML"
-		except (IOError, OSError, ValueError), e:
+				print(ValueError, "could not parse XML")
+		except (IOError, OSError, ValueError) as e:
 			error = "Failed to import: {0}".format(e)
 		finally:
 			if fh is not None:
