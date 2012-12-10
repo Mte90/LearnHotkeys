@@ -30,6 +30,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.newQuestionButton.clicked.connect(self.new_question)
 		self.ui.openDef.clicked.connect(self.openDefDialog)
 		self.ui.openCS.clicked.connect(self.openCSDialog)
+		self.ui.question.setWordWrap(True)
 		#load hotkeys file
 		self.loadHotkeys()
 		self.show()
@@ -104,21 +105,22 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.radioButton_3.setEnabled(False)
 
 	def new_question(self):
-		self.question_chosen = self.key.index(random.choice(self.key))
-		self.ui.question.setText(self.key[self.question_chosen][0].replace(".",".<br>"))
+		key_temp = list(self.key)
+		self.question_chosen = key_temp.index(random.choice(key_temp))
+		self.ui.question.setText(key_temp[self.question_chosen][0].replace(".",".<br>"))
 		radiolist = [self.ui.radioButton,self.ui.radioButton_2,self.ui.radioButton_3]
 		#Set the correct key
 		radiorandom = radiolist.index(random.choice(radiolist))
 		radiolist[radiorandom].setText(self.key[self.question_chosen][1])
 		radiolist.pop(radiorandom)
 		#Set the other key
-		key_temp = list(self.key)
-		index_temp = key_temp.index(random.choice(self.key))
+		index_temp = key_temp.index(random.choice(key_temp))
 		radiorandom = radiolist.index(random.choice(radiolist))
 		radiolist[radiorandom].setText(key_temp[index_temp][1])
+		#delete choosen for not repeat
 		key_temp.pop(index_temp)
 		radiolist.pop(radiorandom)
-		index_temp = key_temp.index(random.choice(self.key))
+		index_temp = key_temp.index(random.choice(key_temp))
 		radiorandom = radiolist.index(random.choice(radiolist))
 		radiolist[radiorandom].setText(key_temp[index_temp][1])
 		key_temp.pop(index_temp)
