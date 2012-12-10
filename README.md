@@ -1,10 +1,9 @@
 ##LearnHotkeys
- It's a simple program created for learn the hotkey of the software :-)
- For a list of program supported https://github.com/Mte90/LearnHotkeys/tree/master/hotkeys
- For execute learnhotkeys.pyw
- Status: Alpha
+It's a simple program created for learn the hotkey of the softwares :-)
+For a list of program supported https://github.com/Mte90/LearnHotkeys/tree/master/hotkeys
+For execute: learnhotkeys.pyw
+Status: Alpha
 #ToDo Alpha:
-	more style
 	more definition hotkeys
 	update of hotkey file by git or site?
 
