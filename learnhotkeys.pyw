@@ -10,6 +10,7 @@ from cheatsheet import CSWindow
 
 class MainWindow ( QMainWindow , Ui_MainWindow):
 
+	#var initialization
 	key = []
 	hotkeys_path = "./hotkeys"
 	hotkeys_folder = hotkeys_path+'/'
@@ -20,21 +21,26 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		QMainWindow.__init__( self, parent )
 		self.ui = Ui_MainWindow()
 		self.ui.setupUi( self )
+		#disabled new question button on load
+		self.ui.newQuestionButton.setEnabled(False)
+		#add signal on the widget
 		self.ui.radioButton.pressed.connect(lambda who=self.ui.radioButton: self.checkAnswer(who))
 		self.ui.radioButton_2.pressed.connect(lambda who=self.ui.radioButton_2: self.checkAnswer(who))
 		self.ui.radioButton_3.pressed.connect(lambda who=self.ui.radioButton_3: self.checkAnswer(who))
 		self.ui.newQuestionButton.clicked.connect(self.new_question)
 		self.ui.openDef.clicked.connect(self.openDefDialog)
 		self.ui.openCS.clicked.connect(self.openCSDialog)
+		#load hotkeys file
 		self.loadHotkeys()
-		self.ui.newQuestionButton.setEnabled(False)
 		self.show()
 
 	def loadHotkeys(self):
+		#check if hotkeys was choosen
 		if self.settings.value('file_name_default').toString() != "":
 			fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
 		else:
 			fname = self.hotkeys_folder+'Bash.xml'
+		#load xml file
 		dom = QDomDocument()
 		error = None
 		fh = None
@@ -52,17 +58,21 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			if error is not None:
 				return False, error
 		root = dom.documentElement()
+		#check version of syntax
 		if not root.hasAttribute('fileversion'):
 			QMessageBox.information(self.window(), "LearnHotkeys","The file %s is not an LearnHotkeys definition file." % self.settings.value('file_name_default').toString())
 			return False
 		self.ui.hotkeys_program.setText('<font style="font-weight:bold">%s - %s<font>' % (root.attribute('software'),root.attribute('softwareversion')))
+		#load hotkeys in a list
 		child = root.firstChildElement('hotkey')
 		while not child.isNull():
 			self.key.append([child.firstChildElement('question').text(),child.firstChildElement('key').text()])
 			child = child.nextSiblingElement('hotkey')
+		#load new question
 		self.new_question()
 
 	def openDefDialog(self):
+		#i need to explain this??
 		window = QDialog()
 		ui = DefWindow()
 		ui.setupUi(window)
@@ -76,14 +86,15 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		ui.exec_()
 
 	def checkAnswer(self, who):
+		#check the answer
 		if who.text() == self.key[self.question_chosen][1]:
-			self.ui.result.setText('Correct answer '+self.key[self.question_chosen][1])
+			self.ui.result.setText('Correct answer <b>'+self.key[self.question_chosen][1]+'</b> !')
 		else:
 			self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer are %s</font>' % self.key[self.question_chosen][1])
+		self.ui.newQuestionButton.setEnabled(True)
 		self.ui.radioButton.setEnabled(False)
 		self.ui.radioButton_2.setEnabled(False)
 		self.ui.radioButton_3.setEnabled(False)
-		self.ui.newQuestionButton.setEnabled(True)
 
 	def new_question(self):
 		self.question_chosen = self.key.index(random.choice(self.key))
@@ -94,8 +105,10 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		radiolist[radiorandom].setText(self.key[self.question_chosen][1])
 		radiolist.pop(radiorandom)
 		#Set the other key
+		key_temp = self.key
+		index_temp = key_temp.index(random.choice(self.key))
 		radiorandom = radiolist.index(random.choice(radiolist))
-		radiolist[radiorandom].setText(self.key[self.key.index(random.choice(self.key))][1])
+		radiolist[radiorandom].setText(self.key[index_temp][1])
 		radiolist.pop(radiorandom)
 		radiorandom = radiolist.index(random.choice(radiolist))
 		radiolist[radiorandom].setText(self.key[self.key.index(random.choice(self.key))][1])
