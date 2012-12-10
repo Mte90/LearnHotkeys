@@ -2,7 +2,7 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyQt4.QtXml import *
-import sys, os
+import sys, os, urllib
 from ui_defdialog import Ui_DefDialog
 
 class DefWindow ( QDialog , Ui_DefDialog):
@@ -17,6 +17,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 		self.ui = Ui_DefDialog()
 		self.ui.setupUi( self )
 		self.ui.pushApply.clicked.connect(self.saveConfig)
+		self.ui.pushUpdate.clicked.connect(self.downloadList)
 		self.show()
 		for root, dirs, files in os.walk(self.hotkeys_path):
 			for name in files:
@@ -25,14 +26,16 @@ class DefWindow ( QDialog , Ui_DefDialog):
 		if sys.version_info < (3, 0):
 			try:
 				if self.ui.comboDef.findText(self.settings.value('file_name_default').toString) != -1:
-					self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default').toString()) )
+					self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default').toString()))
 			except:
 				pass
 		elif self.ui.comboDef.findText(self.settings.value('file_name_default')) != -1:
-			self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default')) )
+			self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default')))
 		self.ui.comboDef.currentIndexChanged.connect(self.comboDefChanged)
+		self.comboDefChanged()
+		self.parseList()
 
-	def comboDefChanged(self, file):
+	def comboDefChanged(self):
 		fname = self.hotkeys_folder+self.ui.comboDef.currentText()
 		dom = QDomDocument()
 		error = None
@@ -55,8 +58,23 @@ class DefWindow ( QDialog , Ui_DefDialog):
 			QMessageBox.information(self.window(), "LearnHotkeys","The file {} is not an LearnHotkeys definition file." % self.ui.comboDef.currentText())
 			return False
 		self.ui.labelDef.setText('<font style="font-weight:bold"> %s - %s<font><br>%s <br><a href="%s">%s</a>' \
-		% (root.attribute('software'),root.attribute('softwareversion'),root.attribute('def'),root.attribute('softwaresite'),root.attribute('softwaresite')) )
+		% (root.attribute('software'),root.attribute('softwareversion'),root.attribute('def'),root.attribute('softwaresite'),root.attribute('softwaresite')))
 
 	def saveConfig(self):
 		self.settings.setValue("file_name_default", self.ui.comboDef.currentText())
 		self.accept()
+
+	def downloadList(self):
+		urllib.urlretrieve('https://raw.github.com/Mte90/LearnHotkeys/master/hotkeys/list', self.hotkeys_folder+'list')
+
+	def parseList(self):
+		model = QStandardItemModel()
+		logfile = open(self.hotkeys_folder+'list', "r").readlines()
+		for line in logfile:
+			line = line.replace('\n','').split('|')
+			item = QStandardItem(line[1] + ' - Syntax ' + line[2] + ' - ' + 'Software ' + line[3])
+			item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
+			item.setData(QVariant(Qt.Checked), Qt.CheckStateRole)
+			model.appendRow(item)
+		self.ui.listUpdate.setModel(model)
+		pass
