@@ -36,13 +36,17 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	def loadHotkeys(self):
 		#check if hotkeys was choosen
-		if self.settings.value('file_name_default') != "":
-			if sys.version_info < (3, 0):
+		if sys.version_info < (3, 0):
+			if self.settings.value('file_name_default').toString() != "":
 				fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
 			else:
-				fname = self.hotkeys_folder+self.settings.value('file_name_default')
+				fname = self.hotkeys_folder+'Bash.xml'
 		else:
-			fname = self.hotkeys_folder+'Bash.xml'
+			if self.settings.value('file_name_default') != "":
+				fname = self.hotkeys_folder+self.settings.value('file_name_default')
+			else:
+				fname = self.hotkeys_folder+'Bash.xml'
+
 		#load xml file
 		dom = QDomDocument()
 		error = None

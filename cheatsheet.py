@@ -27,19 +27,30 @@ class CSWindow ( QDialog , Ui_CSDialog):
 			for name in files:
 				filename = os.path.join(root, name)
 				self.ui.themeChooser.addItem(os.path.basename(filename))
-		if not self.settings.value('theme').toString():
-			self.saveConfig()
-		if self.ui.themeChooser.findText(self.settings.value('theme')) != -1:
-			if sys.version_info < (3, 0):
-				self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()) )
-			else:
-				self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme')) )
+
+		if sys.version_info < (3, 0):
+			if not self.settings.value('theme').toString():
+				self.saveConfig()
+				try:
+					if self.ui.themeChooser.findText(self.settings.value('theme').toString()) != -1:
+						self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()) )
+				except:
+					pass
+		else:
+			if not self.settings.value('theme'):
+				self.saveConfig()
+			self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme')) )
 		self.ui.themeChooser.currentIndexChanged.connect(self.saveConfig)
 		self.loadHotkeys()
 		self.show()
 
 	def loadHotkeys(self):
-		fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
+		if sys.version_info < (3, 0):
+			if self.settings.value('file_name_default').toString() != "":
+				fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
+		else:
+			if self.settings.value('file_name_default') != "":
+				fname = self.hotkeys_folder+self.settings.value('file_name_default')
 		dom = QDomDocument()
 		error = None
 		fh = None
@@ -67,12 +78,21 @@ class CSWindow ( QDialog , Ui_CSDialog):
 			self.html_cs += "\n<tr><td>%s</td><td>%s</td></tr>" % (child.firstChildElement('question').text(),child.firstChildElement('key').text())
 			child = child.nextSiblingElement('hotkey')
 		self.html_cs += "</table></body></html>"
-		self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)
+		if sys.version_info < (3, 0):
+			self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)
+		else:
+			self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme')))+self.html_thead+self.html_cs)
+
 
 	def saveHTML(self):
-		filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()[:-4]+'.html')
-		fname = open(filename, 'w')
-		html = (self.html_style% self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_def+self.html_thead+self.html_cs
+		if sys.version_info < (3, 0):
+			filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()[:-4]+'.html')
+			fname = open(filename, 'w')
+			html = (self.html_style% self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_def+self.html_thead+self.html_cs
+		else:
+			filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default')[:-4]+'.html')
+			fname = open(filename, 'w')
+			html = (self.html_style% self.get_file_content(self.theme_folder+self.settings.value('theme')))+self.html_def+self.html_thead+self.html_cs
 		fname.write(html.toUtf8()+"\n")
 		fname.close()
 
@@ -84,4 +104,7 @@ class CSWindow ( QDialog , Ui_CSDialog):
 
 	def saveConfig(self):
 		self.settings.setValue("theme", self.ui.themeChooser.currentText())
-		self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)
+		if sys.version_info < (3, 0):
+			self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)
+		else:
+			self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme')))+self.html_thead+self.html_cs)

@@ -22,11 +22,14 @@ class DefWindow ( QDialog , Ui_DefDialog):
 			for name in files:
 				filename = os.path.join(root, name)
 				self.ui.comboDef.addItem(os.path.basename(filename))
-		if self.ui.comboDef.findText(self.settings.value('file_name_default')) != -1:
-			if sys.version_info < (3, 0):
-				self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default').toString()) )
-			else:
-				self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default')) )
+		if sys.version_info < (3, 0):
+			try:
+				if self.ui.comboDef.findText(self.settings.value('file_name_default').toString) != -1:
+					self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default').toString()) )
+			except:
+				pass
+		elif self.ui.comboDef.findText(self.settings.value('file_name_default')) != -1:
+			self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default')) )
 		self.ui.comboDef.currentIndexChanged.connect(self.comboDefChanged)
 
 	def comboDefChanged(self, file):
