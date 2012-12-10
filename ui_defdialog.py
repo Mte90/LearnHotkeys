@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/mte90/Desktop/LearnHotkeys/defdialog.ui'
+# Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/defdialog.ui'
 #
-# Created: Mon Apr 23 22:25:21 2012
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Mon Dec 10 23:12:00 2012
+#      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -22,10 +22,10 @@ class Ui_DefDialog(object):
         self.pushApply.setGeometry(QtCore.QRect(290, 270, 97, 23))
         self.pushApply.setObjectName(_fromUtf8("pushApply"))
         self.groupBox = QtGui.QGroupBox(DefDialog)
-        self.groupBox.setGeometry(QtCore.QRect(10, 10, 371, 121))
+        self.groupBox.setGeometry(QtCore.QRect(10, 10, 371, 141))
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.comboDef = QtGui.QComboBox(self.groupBox)
-        self.comboDef.setGeometry(QtCore.QRect(20, 50, 331, 22))
+        self.comboDef.setGeometry(QtCore.QRect(20, 50, 331, 21))
         self.comboDef.setObjectName(_fromUtf8("comboDef"))
         self.label_2 = QtGui.QLabel(self.groupBox)
         self.label_2.setGeometry(QtCore.QRect(20, 20, 161, 21))
@@ -34,9 +34,12 @@ class Ui_DefDialog(object):
         self.labelDef.setGeometry(QtCore.QRect(20, 80, 331, 51))
         self.labelDef.setText(_fromUtf8(""))
         self.labelDef.setObjectName(_fromUtf8("labelDef"))
-        self.label = QtGui.QLabel(DefDialog)
-        self.label.setGeometry(QtCore.QRect(140, 190, 111, 16))
-        self.label.setObjectName(_fromUtf8("label"))
+        self.pushUpdate = QtGui.QPushButton(DefDialog)
+        self.pushUpdate.setGeometry(QtCore.QRect(190, 270, 94, 25))
+        self.pushUpdate.setObjectName(_fromUtf8("pushUpdate"))
+        self.listWidget = QtGui.QListWidget(DefDialog)
+        self.listWidget.setGeometry(QtCore.QRect(10, 150, 371, 111))
+        self.listWidget.setObjectName(_fromUtf8("listWidget"))
 
         self.retranslateUi(DefDialog)
         QtCore.QMetaObject.connectSlotsByName(DefDialog)
@@ -46,5 +49,5 @@ class Ui_DefDialog(object):
         self.pushApply.setText(QtGui.QApplication.translate("DefDialog", "Apply", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox.setTitle(QtGui.QApplication.translate("DefDialog", "Definition File", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("DefDialog", "Choose definition file:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("DefDialog", "Work in progress", None, QtGui.QApplication.UnicodeUTF8))
+        self.pushUpdate.setText(QtGui.QApplication.translate("DefDialog", "Update List", None, QtGui.QApplication.UnicodeUTF8))
 

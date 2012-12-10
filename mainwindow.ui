@@ -110,7 +110,7 @@
        <property name="title">
         <string>HotKeys</string>
        </property>
-       <widget class="QLabel" name="result_2">
+       <widget class="QLabel" name="result">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -123,7 +123,7 @@
          <string/>
         </property>
        </widget>
-       <widget class="QPushButton" name="newQuestionButton_2">
+       <widget class="QPushButton" name="newQuestionButton">
         <property name="geometry">
          <rect>
           <x>370</x>
@@ -145,23 +145,23 @@
           <height>51</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QRadioButton" name="radioButton_4">
+          <widget class="QRadioButton" name="radioButton">
            <property name="text">
             <string>RadioButton</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_5">
+          <widget class="QRadioButton" name="radioButton_2">
            <property name="text">
             <string>RadioButton</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_6">
+          <widget class="QRadioButton" name="radioButton_3">
            <property name="text">
             <string>RadioButton</string>
            </property>
@@ -169,10 +169,6 @@
          </item>
         </layout>
        </widget>
-       <zorder>result_2</zorder>
-       <zorder>newQuestionButton_2</zorder>
-       <zorder>horizontalLayoutWidget_2</zorder>
-       <zorder>openDef</zorder>
       </widget>
      </item>
      <item>
