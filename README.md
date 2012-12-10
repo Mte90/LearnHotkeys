@@ -1,7 +1,10 @@
 ##LearnHotkeys
 It's a simple program created for learn the hotkey of the softwares :-)
+
 For a list of program supported https://github.com/Mte90/LearnHotkeys/tree/master/hotkeys
+
 For execute: learnhotkeys.pyw
+
 Status: Alpha
 #ToDo Alpha:
 	more definition hotkeys
