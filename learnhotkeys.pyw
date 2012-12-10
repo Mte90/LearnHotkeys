@@ -77,7 +77,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	def checkAnswer(self, who):
 		if who.text() == self.key[self.question_chosen][1]:
-			self.ui.result.setText('<font color="#00ff00" style="font-weight:bold">Correct answer</font>')
+			self.ui.result.setText('Correct answer '+self.key[self.question_chosen][1])
 		else:
 			self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer are %s</font>' % self.key[self.question_chosen][1])
 		self.ui.radioButton.setEnabled(False)
