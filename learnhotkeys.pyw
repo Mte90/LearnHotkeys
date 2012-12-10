@@ -31,7 +31,10 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.show()
 
 	def loadHotkeys(self):
-		fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
+		if self.settings.value('file_name_default').toString() != "":
+			fname = self.hotkeys_folder+self.settings.value('file_name_default').toString()
+		else:
+			fname = self.hotkeys_folder+'Bash.xml'
 		dom = QDomDocument()
 		error = None
 		fh = None
@@ -58,14 +61,14 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.key.append([child.firstChildElement('question').text(),child.firstChildElement('key').text()])
 			child = child.nextSiblingElement('hotkey')
 		self.new_question()
-		
+
 	def openDefDialog(self):
 		window = QDialog()
 		ui = DefWindow()
 		ui.setupUi(window)
 		if ui.exec_() == 1:
 			self.loadHotkeys()
-	
+
 	def openCSDialog(self):
 		window = QDialog()
 		ui = CSWindow()
@@ -81,7 +84,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.radioButton_2.setEnabled(False)
 		self.ui.radioButton_3.setEnabled(False)
 		self.ui.newQuestionButton.setEnabled(True)
-		
+
 	def new_question(self):
 		self.question_chosen = self.key.index(random.choice(self.key))
 		self.ui.question.setText(self.key[self.question_chosen][0].replace(".",".<br>"))
