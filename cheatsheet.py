@@ -18,7 +18,7 @@ class CSWindow ( QDialog , Ui_CSDialog):
 	html_thead = "\n<table><tr style='font-weight:bold'><td>Action</td><td>HotKey</td></tr>"
 	html_def = ""
 	def __init__ ( self, parent = None ):
-		QDialog.__init__( self, parent )
+		QDialog.__init__( self, parent, Qt.CustomizeWindowHint )
 		self.ui = Ui_CSDialog()
 		self.ui.setupUi( self )
 		self.ui.saveButton.clicked.connect(self.saveHTML)

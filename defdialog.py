@@ -13,7 +13,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 	settings.setFallbacksEnabled(False)
 
 	def __init__ ( self, parent = None ):
-		QDialog.__init__( self, parent )
+		QDialog.__init__( self, parent, Qt.CustomizeWindowHint)
 		self.ui = Ui_DefDialog()
 		self.ui.setupUi( self )
 		self.ui.pushApply.clicked.connect(self.saveConfig)
@@ -55,8 +55,14 @@ class DefWindow ( QDialog , Ui_DefDialog):
 		logfile = open(self.hotkeys_folder+'list', "r").readlines()
 		for line in logfile:
 			line = line.replace('\n','').split('|')
-			root = self.syntaxParser(line[0])
-			if root.attribute('fileversion') != line[2]:
+			#check if syntax exist
+			if exists(self.hotkeys_folder+line[0]):
+				root = self.syntaxParser(line[0])
+				temp = root.attribute('fileversion')
+			else:
+				temp = '0'
+
+			if temp != line[2]:
 				item = QStandardItem('New! ' + line[1] + ' - Syntax ' + line[2] + ' - ' + 'Software ' + line[3])
 				item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled| Qt.ToolTip)
 				item.setData(QVariant(Qt.Checked), Qt.CheckStateRole)
@@ -69,6 +75,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 		self.ui.listUpdate.setModel(model)
 
 	def downloadSyntax(self):
+		#loop the item on list for download the update
 		for index in xrange(self.ui.listUpdate.model().rowCount()):
 			check_box = self.ui.listUpdate.model().item(index)
 			state = check_box.checkState()
