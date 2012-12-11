@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/mte90/Desktop/LearnHotkeys/cheatsheet.ui'
+# Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/cheatsheet.ui'
 #
-# Created: Thu May  3 23:50:46 2012
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Tue Dec 11 11:54:33 2012
+#      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -18,6 +18,7 @@ class Ui_CSDialog(object):
     def setupUi(self, CSDialog):
         CSDialog.setObjectName(_fromUtf8("CSDialog"))
         CSDialog.resize(421, 371)
+        CSDialog.setModal(True)
         self.csView = QtWebKit.QWebView(CSDialog)
         self.csView.setGeometry(QtCore.QRect(10, 10, 401, 321))
         self.csView.setAcceptDrops(False)

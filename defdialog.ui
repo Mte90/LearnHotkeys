@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>392</width>
+    <height>309</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QPushButton" name="pushApply">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>270</y>
+     <x>280</x>
+     <y>280</y>
      <width>97</width>
      <height>23</height>
     </rect>
@@ -35,40 +35,27 @@
      <x>10</x>
      <y>10</y>
      <width>371</width>
-     <height>141</height>
+     <height>121</height>
     </rect>
    </property>
    <property name="title">
-    <string>Definition File</string>
+    <string>Choose Definition File</string>
    </property>
    <widget class="QComboBox" name="comboDef">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>50</y>
+      <y>30</y>
       <width>331</width>
       <height>21</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>161</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Choose definition file:</string>
     </property>
    </widget>
    <widget class="QLabel" name="labelDef">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>80</y>
+      <y>60</y>
       <width>331</width>
       <height>51</height>
      </rect>
@@ -81,8 +68,8 @@
   <widget class="QPushButton" name="pushUpdate">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>270</y>
+     <x>180</x>
+     <y>280</y>
      <width>94</width>
      <height>25</height>
     </rect>
@@ -91,24 +78,11 @@
     <string>Update List</string>
    </property>
   </widget>
-  <widget class="QListView" name="listUpdate">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>150</y>
-     <width>371</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <property name="showDropIndicator" stdset="0">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushDownload">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>270</y>
+     <x>80</x>
+     <y>280</y>
      <width>94</width>
      <height>25</height>
     </rect>
@@ -116,6 +90,32 @@
    <property name="text">
     <string>Download</string>
    </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>140</y>
+     <width>371</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Update</string>
+   </property>
+   <widget class="QListView" name="listUpdate">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>371</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="showDropIndicator" stdset="0">
+     <bool>false</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
