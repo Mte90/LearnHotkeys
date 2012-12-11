@@ -33,6 +33,17 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.question.setWordWrap(True)
 		#load hotkeys file
 		self.loadHotkeys()
+		#center the window on the screen
+		#http://www.eurion.net/python-snippets/snippet/Center%20window.html
+		screen = QDesktopWidget().screenGeometry()
+		# ... and get this windows' dimensions
+		mysize = self.geometry()
+		# The horizontal position is calulated as screenwidth - windowwidth /2
+		hpos = ( screen.width() - mysize.width() ) / 2
+		# And vertical position the same, but with the height dimensions
+		vpos = ( screen.height() - mysize.height() - mysize.height() ) / 2
+		# And the move call repositions the window
+		self.move(hpos, vpos)
 		self.show()
 
 	def loadHotkeys(self):
