@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<software fileversion="1.0" softwareversion="11.0" def="Firefox Hotkeys" software="Firefox" softwaresite="http://www.getfirefox.com">
+<software fileversion="1.0" softwareversion="17.0" def="Firefox Hotkeys" software="Firefox" softwaresite="http://www.getfirefox.com">
 		<hotkey>
 			<question>Help</question>
 			<key>F1</key>
@@ -234,7 +234,7 @@
 		</hotkey>
 		<hotkey>
 			<question>Downloads</question>
-			<key>Ctrl+J</key>
+			<key>Ctrl+Shift+Y</key>
 		</hotkey>
 		<hotkey>
 			<question>Add-ons</question>
@@ -310,8 +310,7 @@
 		</hotkey>
 		<hotkey>
 			<question>Toggle Menu Bar</question>
-			<key>Alt</key>
-			<key>F10</key>
+			<key>Alt or F10</key>
 		</hotkey>
 		<hotkey>
 			<question>Show/Hide Add-on Bar</question>
