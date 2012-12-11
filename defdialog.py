@@ -18,6 +18,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 		self.ui.setupUi( self )
 		self.ui.pushApply.clicked.connect(self.saveConfig)
 		self.ui.pushUpdate.clicked.connect(self.downloadList)
+		self.ui.pushDownload.clicked.connect(self.downloadSyntax)
 		self.show()
 		for root, dirs, files in os.walk(self.hotkeys_path):
 			for name in files:
@@ -56,12 +57,17 @@ class DefWindow ( QDialog , Ui_DefDialog):
 			root = self.syntaxParser(line[0])
 			if root.attribute('fileversion') != line[2]:
 				item = QStandardItem('New! ' + line[1] + ' - Syntax ' + line[2] + ' - ' + 'Software ' + line[3])
+				item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
+				item.setData(QVariant(Qt.Checked), Qt.CheckStateRole)
 			else:
 				item = QStandardItem(line[1] + ' - Syntax ' + line[2] + ' - ' + 'Software ' + line[3])
-			item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
-			item.setData(QVariant(Qt.Checked), Qt.CheckStateRole)
+				item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
+				item.setData(False, Qt.CheckStateRole)
 			model.appendRow(item)
 		self.ui.listUpdate.setModel(model)
+
+	def downloadSyntax(self):
+		#urllib.urlretrieve('https://raw.github.com/Mte90/LearnHotkeys/master/hotkeys/', self.hotkeys_folder+)
 		pass
 
 	def syntaxParser(self,file):
