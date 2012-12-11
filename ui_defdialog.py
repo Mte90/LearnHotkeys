@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/defdialog.ui'
 #
-# Created: Tue Dec 11 00:23:22 2012
+# Created: Tue Dec 11 11:39:10 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -18,6 +18,7 @@ class Ui_DefDialog(object):
     def setupUi(self, DefDialog):
         DefDialog.setObjectName(_fromUtf8("DefDialog"))
         DefDialog.resize(400, 300)
+        DefDialog.setModal(True)
         self.pushApply = QtGui.QPushButton(DefDialog)
         self.pushApply.setGeometry(QtCore.QRect(290, 270, 97, 23))
         self.pushApply.setObjectName(_fromUtf8("pushApply"))
@@ -41,6 +42,9 @@ class Ui_DefDialog(object):
         self.listUpdate.setGeometry(QtCore.QRect(10, 150, 371, 111))
         self.listUpdate.setProperty("showDropIndicator", False)
         self.listUpdate.setObjectName(_fromUtf8("listUpdate"))
+        self.pushDownload = QtGui.QPushButton(DefDialog)
+        self.pushDownload.setGeometry(QtCore.QRect(90, 270, 94, 25))
+        self.pushDownload.setObjectName(_fromUtf8("pushDownload"))
 
         self.retranslateUi(DefDialog)
         QtCore.QMetaObject.connectSlotsByName(DefDialog)
@@ -51,4 +55,5 @@ class Ui_DefDialog(object):
         self.groupBox.setTitle(QtGui.QApplication.translate("DefDialog", "Definition File", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("DefDialog", "Choose definition file:", None, QtGui.QApplication.UnicodeUTF8))
         self.pushUpdate.setText(QtGui.QApplication.translate("DefDialog", "Update List", None, QtGui.QApplication.UnicodeUTF8))
+        self.pushDownload.setText(QtGui.QApplication.translate("DefDialog", "Download", None, QtGui.QApplication.UnicodeUTF8))
 

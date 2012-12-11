@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Choose Definition</string>
   </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
   <widget class="QPushButton" name="pushApply">
    <property name="geometry">
     <rect>
@@ -99,6 +102,19 @@
    </property>
    <property name="showDropIndicator" stdset="0">
     <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushDownload">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>270</y>
+     <width>94</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Download</string>
    </property>
   </widget>
  </widget>
