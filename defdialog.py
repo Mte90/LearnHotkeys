@@ -48,6 +48,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 
 	def downloadList(self):
 		urllib.urlretrieve('https://raw.github.com/Mte90/LearnHotkeys/master/hotkeys/list', self.hotkeys_folder+'list')
+		self.parseList()
 
 	def parseList(self):
 		model = QStandardItemModel()
@@ -57,18 +58,24 @@ class DefWindow ( QDialog , Ui_DefDialog):
 			root = self.syntaxParser(line[0])
 			if root.attribute('fileversion') != line[2]:
 				item = QStandardItem('New! ' + line[1] + ' - Syntax ' + line[2] + ' - ' + 'Software ' + line[3])
-				item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
+				item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled| Qt.ToolTip)
 				item.setData(QVariant(Qt.Checked), Qt.CheckStateRole)
 			else:
 				item = QStandardItem(line[1] + ' - Syntax ' + line[2] + ' - ' + 'Software ' + line[3])
-				item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
+				item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled| Qt.ToolTip)
 				item.setData(False, Qt.CheckStateRole)
+			item.setToolTip(line[0])
 			model.appendRow(item)
 		self.ui.listUpdate.setModel(model)
 
 	def downloadSyntax(self):
-		#urllib.urlretrieve('https://raw.github.com/Mte90/LearnHotkeys/master/hotkeys/', self.hotkeys_folder+)
-		pass
+		for index in xrange(self.ui.listUpdate.model().rowCount()):
+			check_box = self.ui.listUpdate.model().item(index)
+			state = check_box.checkState()
+			file_name = str(check_box.toolTip())
+			if state != False:
+				urllib.urlretrieve('https://raw.github.com/Mte90/LearnHotkeys/master/hotkeys/'+file_name, self.hotkeys_folder+file_name)
+		self.parseList()
 
 	def syntaxParser(self,file):
 		fname = self.hotkeys_folder+file
@@ -90,6 +97,6 @@ class DefWindow ( QDialog , Ui_DefDialog):
 				return False, error
 		root = dom.documentElement()
 		if not root.hasAttribute('fileversion'):
-			QMessageBox.information(self.window(), "LearnHotkeys","The file {} is not an LearnHotkeys definition file." % file)
+			QMessageBox.information(self.window(), "LearnHotkeys","The file %s is not an LearnHotkeys definition file." % file)
 			return False
 		return root
