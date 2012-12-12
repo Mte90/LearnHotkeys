@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/mainwindow.ui'
 #
-# Created: Tue Dec 11 00:20:15 2012
+# Created: Wed Dec 12 16:18:10 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -17,7 +17,7 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(500, 259)
+        MainWindow.resize(500, 260)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -93,9 +93,15 @@ class Ui_MainWindow(object):
         self.radioButton_3.setObjectName(_fromUtf8("radioButton_3"))
         self.horizontalLayout.addWidget(self.radioButton_3)
         self.verticalLayout.addWidget(self.groupBox)
+        self.horizontalLayout_2 = QtGui.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
+        self.openEditor = QtGui.QPushButton(self.verticalLayoutWidget)
+        self.openEditor.setObjectName(_fromUtf8("openEditor"))
+        self.horizontalLayout_2.addWidget(self.openEditor)
         self.openDef = QtGui.QPushButton(self.verticalLayoutWidget)
         self.openDef.setObjectName(_fromUtf8("openDef"))
-        self.verticalLayout.addWidget(self.openDef)
+        self.horizontalLayout_2.addWidget(self.openDef)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)
@@ -109,5 +115,6 @@ class Ui_MainWindow(object):
         self.radioButton.setText(QtGui.QApplication.translate("MainWindow", "RadioButton", None, QtGui.QApplication.UnicodeUTF8))
         self.radioButton_2.setText(QtGui.QApplication.translate("MainWindow", "RadioButton", None, QtGui.QApplication.UnicodeUTF8))
         self.radioButton_3.setText(QtGui.QApplication.translate("MainWindow", "RadioButton", None, QtGui.QApplication.UnicodeUTF8))
+        self.openEditor.setText(QtGui.QApplication.translate("MainWindow", "Editor", None, QtGui.QApplication.UnicodeUTF8))
         self.openDef.setText(QtGui.QApplication.translate("MainWindow", "Change Definition File", None, QtGui.QApplication.UnicodeUTF8))
 

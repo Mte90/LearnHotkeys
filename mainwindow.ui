@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>259</height>
+    <height>260</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -169,18 +169,25 @@
          </item>
         </layout>
        </widget>
-       <zorder>result</zorder>
-       <zorder>newQuestionButton</zorder>
-       <zorder>horizontalLayoutWidget_2</zorder>
-       <zorder>question</zorder>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="openDef">
-       <property name="text">
-        <string>Change Definition File</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="openEditor">
+         <property name="text">
+          <string>Editor</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="openDef">
+         <property name="text">
+          <string>Change Definition File</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>
