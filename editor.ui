@@ -193,6 +193,13 @@
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="pushSaveHK">
+            <property name="text">
+             <string>Save File</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="pushNewQuestion">
             <property name="text">
              <string>New Question</string>

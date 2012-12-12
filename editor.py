@@ -18,23 +18,10 @@ class EditorWindow ( QDialog , Ui_Editor):
 		self.ui.setupUi( self )
 		#self.ui.saveButton.clicked.connect(self.saveHTML)
 		#self.ui.closeButton.clicked.connect(self.accept)
-		#for root, dirs, files in os.walk(self.theme_path):
-			#for name in files:
-				#filename = os.path.join(root, name)
-				#self.ui.themeChooser.addItem(os.path.basename(filename))
-
-		#if sys.version_info < (3, 0):
-			#if not self.settings.value('theme').toString():
-				#self.saveConfig()
-				#try:
-					#if self.ui.themeChooser.findText(self.settings.value('theme').toString()) != -1:
-						#self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()))
-				#except:
-					#pass
-		#else:
-			#if not self.settings.value('theme'):
-				#self.saveConfig()
-			#self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme')))
+		for root, dirs, files in os.walk(self.hotkeys_path):
+			for name in files:
+				filename = os.path.join(root, name)
+				self.ui.comboHotkeys.addItem(os.path.basename(filename))
 		#self.ui.themeChooser.currentIndexChanged.connect(self.saveConfig)
 		#self.loadHotkeys()
 		self.show()
@@ -91,15 +78,3 @@ class EditorWindow ( QDialog , Ui_Editor):
 		#fname.write(html.toUtf8()+"\n")
 		#fname.close()
 
-	#def get_file_content(self,file):
-		#f = open(file, 'r')
-		#c = f.read()
-		#f.close()
-		#return c
-
-	#def saveConfig(self):
-		#self.settings.setValue("theme", self.ui.themeChooser.currentText())
-		#if sys.version_info < (3, 0):
-			#self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)
-		#else:
-			#self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme')))+self.html_thead+self.html_cs)
