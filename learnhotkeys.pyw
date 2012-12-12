@@ -7,6 +7,7 @@ import sys, os, random
 from ui_mainwindow import Ui_MainWindow
 from defdialog import DefWindow
 from cheatsheet import CSWindow
+from editor import EditorWindow
 
 class MainWindow ( QMainWindow , Ui_MainWindow):
 
@@ -30,6 +31,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.newQuestionButton.clicked.connect(self.new_question)
 		self.ui.openDef.clicked.connect(self.openDefDialog)
 		self.ui.openCS.clicked.connect(self.openCSDialog)
+		self.ui.openEditor.clicked.connect(self.openEditor)
 		self.ui.question.setWordWrap(True)
 		#load hotkeys file
 		self.loadHotkeys()
@@ -103,6 +105,13 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		ui = CSWindow()
 		ui.setupUi(window)
 		ui.exec_()
+
+	def openEditor(self):
+		window = QDialog()
+		ui = EditorWindow()
+		ui.setupUi(window)
+		if ui.exec_() == 1:
+			self.loadHotkeys()
 
 	def checkAnswer(self, who):
 		#check the answer
