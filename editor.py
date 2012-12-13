@@ -55,7 +55,7 @@ class EditorWindow ( QDialog , Ui_Editor):
 		child = root.firstChildElement('hotkey')
 		while not child.isNull():
 			#self.html_cs += "\n<tr><td>%s</td><td>%s</td></tr>" % (child.firstChildElement('question').text(),child.firstChildElement('key').text())
-			count_child = count_child+1
+			count_child += 1
 			child = child.nextSiblingElement('hotkey')
 		self.ui.totalQuestion.setText('Total question: '+str(count_child))
 		#self.html_cs += "</table></body></html>"

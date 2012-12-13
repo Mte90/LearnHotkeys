@@ -56,7 +56,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 		for line in logfile:
 			line = line.replace('\n','').split('|')
 			#check if syntax exist
-			if path.exists(self.hotkeys_folder+line[0]):
+			if os.path.exists(self.hotkeys_folder+line[0]):
 				root = self.syntaxParser(line[0])
 				temp = root.attribute('fileversion')
 			else:
