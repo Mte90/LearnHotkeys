@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="7.3.*" def="Generic hotkeys for Vim editor" software="Vim" softwaresite="http://www.vim.org/">
+    <hotkey>
+        <question>Exit to insert mode</question>
+        <key>Esc or Ctrl + c</key>
+    </hotkey>
+    <hotkey>
+        <question>Quit Vim</question>
+        <key>:q[uit]</key>
+    </hotkey>
+    <hotkey>
+        <question>Quit vim without saving</question>
+        <key>:q[uit]! or ZQ</key>
+    </hotkey>
+    <hotkey>
+        <question>Quit always, without writing</question>
+        <key>:cq[uit]</quit>
+    </hotkey>
+    <hotkey>
+        <question>Write the current file and exit</question>
+        <key>:wq</key>
+    </hotkey>
+    <hotkey>
+        <question>Write the current file and exit, always</question>
+        <key>:wq! or ZZ</key>
+    </hotkey>
+    <hotkey>
+        <question>Enter in insert mode - Append text after the cursor [count] times</question>
+        <key>a</key>
+    </hotkey>
+    <hotkey>
+        <question>Enter in insert mode - Append text at the end of the line [count] times</question>
+        <key>A</key>
+    </hotkey>
+    <hotkey>
+        <question>Enter in insert mode - Insert text before the cursor [count] times</question>
+        <key>i</key>
+    </hotkey>
+    <hotkey>
+        <question>Enter in insert mode - Insert text before the first non-blank in the line [count] times</question>
+        <key>I</key>
+    </hotkey>
+    <hotkey>
+        <question>Enter in insert mode - Begin a new line below the cursor and insert text, repeat [count] times</question>
+        <key>o</key>
+    </hotkey>
+    <hotkey>
+        <question>Enter in insert mode - Begin a new line above the cursor and insert text, repeat [count] times</question>
+        <key>O</key>
+    </hotkey>
+    <hotkey>
+        <question>Delete [count] characters under and after the cursor</question>
+        <key>DEL or x</key>
+    </hotkey>
+    <hotkey>
+        <question>Delete [count] characters before the cursor</question>
+        <key>X</key>
+    </hotkey>
+    <hotkey>
+        <question>Delete text that moves over</question>
+        <key>d</key>
+    </hotkey>
+    <hotkey>
+        <question>Delete [count] lines</question>
+        <key>dd</key>
+    </hotkey>
+    <hotkey>
+        <question>Copy text</question>
+        <key>y</key>
+    </hotkey>
+    <hotkey>
+        <question>Copy [count] lines</question>
+        <key>Y</key>
+    </hotkey>
+    <hotkey>
+        <question>Paste text after the cursor [count] times</question>
+        <key>p</key>
+    </hotkey>
+    <hotkey>
+        <question>Paste text before the cursor [count] times</question>
+        <key>P</key>
+    </hotkey>
+    <hotkey>
+        <question>Undo [count] changes</question>
+        <key>u</key>
+    </hotkey>
+    <hotkey>
+        <question>Redo [count] changes which were undone</question>
+        <key>Ctrl + R</key>
+    </hotkey>
+    <hotkey>
+        <question>To the end of the line and [count - 1] lines downward</question>
+        <key>$</key>
+    </hotkey>
+    <hotkey>
+        <question>Remove [count] indenting</question>
+        <key><<</key>
+    </hotkey>
+    <hotkey>
+        <question>Add [count] indenting</question>
+        <key>>></key>
+    </hotkey>
+<software>

@@ -5,3 +5,4 @@ Bash.xml|Bash|1.0|X.X|Generic hotkeys for the bourne again shell
 Gedit.xml|Gedit|1.0|X.X|Gedit hotkeys
 Kate.xml|Kate|1.0|3.8.*|Kate Editor
 Generic.xml|Generic|1.0|X.X|Generic hotkey for all software
+Vim.xml|Vim|1.0|7.3.*|Vim Editor
