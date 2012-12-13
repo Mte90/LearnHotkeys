@@ -69,7 +69,7 @@ class CSWindow ( QDialog , Ui_CSDialog):
 				return False, error
 		root = dom.documentElement()
 		if not root.hasAttribute('fileversion'):
-			QMessageBox.information(self.window(), "LearnHotkeys","The file {} is not an LearnHotkeys definition file." % self.settings.value('file_name_default').toString())
+			QMessageBox.information(self.window(), "LearnHotkeys","The file %s is not an LearnHotkeys definition file." % self.settings.value('file_name_default').toString())
 			return False
 		self.html_def += root.attribute('software')+" - "+root.attribute('softwareversion')+" - "+root.attribute('def')+"<br>\n<a href='"+root.attribute('softwaresite')+"'>" \
 		+root.attribute('softwaresite')+"</a><br> CheatSheet version: "+root.attribute('fileversion')+"<br><br>"
