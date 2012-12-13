@@ -27,19 +27,14 @@ class CSWindow ( QDialog , Ui_CSDialog):
 			for name in files:
 				filename = os.path.join(root, name)
 				self.ui.themeChooser.addItem(os.path.basename(filename))
-
 		if sys.version_info < (3, 0):
-			if not self.settings.value('theme').toString():
+			if self.ui.themeChooser.findText(self.settings.value('theme').toString()) != -1:
+				self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()))
 				self.saveConfig()
-				try:
-					if self.ui.themeChooser.findText(self.settings.value('theme').toString()) != -1:
-						self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()))
-				except:
-					pass
 		else:
-			if not self.settings.value('theme'):
+			if self.ui.themeChooser.findText(self.settings.value('theme')) != -1:
+				self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme')))
 				self.saveConfig()
-			self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme')))
 		self.ui.themeChooser.currentIndexChanged.connect(self.saveConfig)
 		self.loadHotkeys()
 		self.show()
