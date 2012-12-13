@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/editor.ui'
 #
-# Created: Wed Dec 12 16:24:05 2012
+# Created: Thu Dec 13 11:37:04 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -118,9 +118,6 @@ class Ui_Editor(object):
         self.totalQuestion = QtGui.QLabel(self.verticalLayoutWidget)
         self.totalQuestion.setObjectName(_fromUtf8("totalQuestion"))
         self.horizontalLayout_4.addWidget(self.totalQuestion)
-        self.pushSaveHK = QtGui.QPushButton(self.verticalLayoutWidget)
-        self.pushSaveHK.setObjectName(_fromUtf8("pushSaveHK"))
-        self.horizontalLayout_4.addWidget(self.pushSaveHK)
         self.pushNewQuestion = QtGui.QPushButton(self.verticalLayoutWidget)
         self.pushNewQuestion.setObjectName(_fromUtf8("pushNewQuestion"))
         self.horizontalLayout_4.addWidget(self.pushNewQuestion)
@@ -150,6 +147,5 @@ class Ui_Editor(object):
         self.label_3.setText(QtGui.QApplication.translate("Editor", "Software", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("Editor", "Software Version", None, QtGui.QApplication.UnicodeUTF8))
         self.totalQuestion.setText(QtGui.QApplication.translate("Editor", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushSaveHK.setText(QtGui.QApplication.translate("Editor", "Save File", None, QtGui.QApplication.UnicodeUTF8))
         self.pushNewQuestion.setText(QtGui.QApplication.translate("Editor", "New Question", None, QtGui.QApplication.UnicodeUTF8))
 

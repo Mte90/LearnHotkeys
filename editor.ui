@@ -81,8 +81,6 @@
         </item>
        </layout>
       </widget>
-      <zorder>horizontalLayoutWidget</zorder>
-      <zorder>buttonBox</zorder>
      </widget>
     </item>
     <item row="2" column="0">
@@ -189,13 +187,6 @@
            <widget class="QLabel" name="totalQuestion">
             <property name="text">
              <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushSaveHK">
-            <property name="text">
-             <string>Save File</string>
             </property>
            </widget>
           </item>

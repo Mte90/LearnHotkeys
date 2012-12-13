@@ -21,6 +21,7 @@ class EditorWindow ( QDialog , Ui_Editor):
 				filename = os.path.join(root, name)
 				self.ui.comboHotkeys.addItem(os.path.basename(filename))
 		self.ui.comboHotkeys.currentIndexChanged.connect(self.loadHotkeys)
+		self.ui.pushSave.clicked.connect(self.saveXML)
 		self.loadHotkeys()
 		self.show()
 
@@ -58,14 +59,10 @@ class EditorWindow ( QDialog , Ui_Editor):
 			count_child += 1
 			child = child.nextSiblingElement('hotkey')
 		self.ui.totalQuestion.setText('Total question: '+str(count_child))
-		#self.html_cs += "</table></body></html>"
-		#if sys.version_info < (3, 0):
-			#self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_thead+self.html_cs)
-		#else:
-			#self.ui.csView.setHtml((self.html_style % self.get_file_content(self.theme_folder+self.settings.value('theme')))+self.html_thead+self.html_cs)
 
 
-	#def saveHTML(self):
+	def saveXML(self):
+		pass
 		#if sys.version_info < (3, 0):
 			#filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()[:-4]+'.html')
 			#fname = open(filename, 'w')

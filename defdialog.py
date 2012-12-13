@@ -76,7 +76,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 
 	def downloadSyntax(self):
 		#loop the item on list for download the update
-		for index in xrange(self.ui.listUpdate.model().rowCount()):
+		for index in range(self.ui.listUpdate.model().rowCount()):
 			check_box = self.ui.listUpdate.model().item(index)
 			state = check_box.checkState()
 			file_name = str(check_box.toolTip())
