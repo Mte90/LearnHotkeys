@@ -56,4 +56,12 @@
         <question>Reply to all message recipients</question>
         <key>a</key>
     </hotkey>
+    <hotkey>
+        <question>Forward a message</question>
+        <key>f</key>
+    </hotkey>
+    <hotkey>
+        <question>Set as important</question>
+        <key>+</key>
+    </hotkey>
 </software>
