@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="11.1" def="Generic hotkeys for Firebug Extension" software="Firebug" softwaresite="http://getfirebug.com/">
+    <hotkey>
+        <question>Open Firebug Panel</question>
+        <key>F12</key>
+    </hotkey>
+    <hotkey>
+        <question>Close Firebug Panel</question>
+        <key>F12</key>
+    </hotkey>
+    <hotkey>
+        <question>Open Firebug in a new Window</question>
+        <key>Ctrl + F12</key>
+    </hotkey>
+<software>
