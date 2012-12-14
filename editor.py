@@ -11,6 +11,8 @@ class EditorWindow ( QDialog , Ui_Editor):
     settings.setFallbacksEnabled(False)
     hotkeys_path = "./hotkeys"
     hotkeys_folder = hotkeys_path+'/'
+    questions = []
+    hotkeys = []
 
     def __init__ ( self, parent = None ):
         QDialog.__init__( self, parent )
@@ -22,6 +24,7 @@ class EditorWindow ( QDialog , Ui_Editor):
                 self.ui.comboHotkeys.addItem(os.path.basename(filename))
         self.ui.comboHotkeys.currentIndexChanged.connect(self.loadHotkeys)
         self.ui.pushSave.clicked.connect(self.saveXML)
+        self.ui.listQuestion.itemActivated.connect(self.loadQuestion)
         self.loadHotkeys()
 #        self.ui.test = Ui_LineBlockWidget()
         self.show()
@@ -58,9 +61,16 @@ class EditorWindow ( QDialog , Ui_Editor):
         while not child.isNull():
             #self.html_cs += "\n<tr><td>%s</td><td>%s</td></tr>" % (child.firstChildElement('question').text(),child.firstChildElement('key').text())
             count_child += 1
+            self.ui.listQuestion.addItem(str(count_child) + ' - '+ child.firstChildElement('question').text())
+            self.questions.append(child.firstChildElement('question').text())
+            self.hotkeys.append(child.firstChildElement('key').text())
             child = child.nextSiblingElement('hotkey')
         self.ui.totalQuestion.setText('Total question: '+str(count_child))
+        self.ui.listQuestion.item(0).setSelected(True)
 
+    def loadQuestion(self,item):
+#        self.ui.question.setText(self.questions[item.])
+        pass
 
     def saveXML(self):
         pass

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/editor.ui'
 #
-# Created: Fri Dec 14 17:52:53 2012
+# Created: Fri Dec 14 17:55:27 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -124,15 +124,15 @@ class Ui_Editor(object):
         self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.gridLayout_3 = QtGui.QGridLayout()
         self.gridLayout_3.setObjectName(_fromUtf8("gridLayout_3"))
-        self.listWidget = QtGui.QListWidget(self.verticalLayoutWidget)
+        self.listQuestion = QtGui.QListWidget(self.verticalLayoutWidget)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.listWidget.sizePolicy().hasHeightForWidth())
-        self.listWidget.setSizePolicy(sizePolicy)
-        self.listWidget.setMaximumSize(QtCore.QSize(170, 16777215))
-        self.listWidget.setObjectName(_fromUtf8("listWidget"))
-        self.gridLayout_3.addWidget(self.listWidget, 0, 0, 1, 1)
+        sizePolicy.setHeightForWidth(self.listQuestion.sizePolicy().hasHeightForWidth())
+        self.listQuestion.setSizePolicy(sizePolicy)
+        self.listQuestion.setMaximumSize(QtCore.QSize(170, 16777215))
+        self.listQuestion.setObjectName(_fromUtf8("listQuestion"))
+        self.gridLayout_3.addWidget(self.listQuestion, 0, 0, 1, 1)
         self.groupBox = QtGui.QGroupBox(self.verticalLayoutWidget)
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.gridLayoutWidget_3 = QtGui.QWidget(self.groupBox)
