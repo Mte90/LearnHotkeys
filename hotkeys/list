@@ -6,3 +6,4 @@ Gedit.xml|Gedit|1.0|X.X|Gedit hotkeys
 Kate.xml|Kate|1.0|3.8.*|Kate Editor
 Generic.xml|Generic|1.0|X.X|Generic hotkey for all software
 Vim.xml|Vim|2.0|7.3.*|Vim Editor
+GMail.xml|Gmail|1.0|X.X|GMail site
