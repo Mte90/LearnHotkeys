@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="X.X" def="Generic hotkeys for Gmail website" software="GMail" softwaresite="http://mail.google.com/">
+    <hotkey>
+        <question>Compose a new message</question>
+        <key>c</key>
+    </hotkey>
+    <hotkey>
+        <question>Compose a message in a new window</question>
+        <key>+ c</key>
+    </hotkey>
+    <hotkey>
+        <question>Puts your cursor in the search box</question>
+        <key>/</key>
+    </hotkey>
+    <hotkey>
+        <question>Opens or moves your cursor to a more recent conversation. You can hit to expand a conversation</question>
+        <key>k</key>
+    </hotkey>
+    <hotkey>
+        <question>Opens or moves your cursor to the next oldest conversation. You can hit to expand a conversation.</question>
+        <key>j</key>
+    </hotkey>
+    <hotkey>
+        <question>Moves your cursor to the next message. You can hit to expand or collapse a message. - Only applicable in Conversation View -</question>
+        <key>n</key>
+    </hotkey>
+    <hotkey>
+        <question>Moves your cursor to the previous message. You can hit to expand or collapse a message. - Only applicable in Conversation View -</question>
+        <key>p</key>
+    </hotkey>
+    <hotkey>
+        <question>Opens your conversation. Also expands or collapses a message if you are in Conversation View</question>
+        <key>o</key>
+    </hotkey>
+    <hotkey>
+        <question>Automatically checks and selects a conversation so that you can archive, apply a label, or choose an action from the drop-down menu to apply to that conversation</question>
+        <key>x</key>
+    </hotkey>
+    <hotkey>
+        <question>Adds or removes a star to a message or conversation. Stars allow you to give a message or conversation a special status</question>
+        <key>s</key>
+    </hotkey>
+    <hotkey>
+        <question>Marks a message as spam and removes it from your conversation list</question>
+        <key>!</key>
+    </hotkey>
+    <hotkey>
+        <question>Reply to the message sender</question>
+        <key>r</key>
+    </hotkey>
+    <hotkey>
+        <question>Reply to a message in a new window. - Only applicable in Conversation View -</question>
+        <key>+ r</key>
+    </hotkey>
+    <hotkey>
+        <question>Reply to all message recipients</question>
+        <key>a</key>
+    </hotkey>
+</software>
