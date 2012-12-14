@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="11.1" def="Generic hotkeys for Firebug Extension" software="Firebug" softwaresite="http://getfirebug.com/">
+    <hotkey>
+        <question>Open Firebug Panel</question>
+        <key>F12</key>
+    </hotkey>
+    <hotkey>
+        <question>Close Firebug Panel</question>
+        <key>F12</key>
+    </hotkey>
+    <hotkey>
+        <question>Open Firebug in a new Window</question>
+        <key>Ctrl + F12</key>
+    </hotkey>
+    <hotkey>
+        <question>Switch to previous tab</question>
+        <key>Ctrl + `</key>
+    </hotkey>
+    <hotkey>
+        <question>Focus to Command Line</question>
+        <key>Ctrl + Shift + L</key>
+    </hotkey>
+    <hotkey>
+        <question>Focus to Search Box</question>
+        <key>Ctrl + Shift + K</key>
+    </hotkey>
+    <hotkey>
+        <question>Toggle Inspect Mode</question>
+        <key>Ctrl + Shift + C</key>
+    </hotkey>
+    <hotkey>
+        <question>Toggle JavaScript Profiler</question>
+        <key>Ctrl + Shift + P</key>
+    </hotkey>
+    <hotkey>
+        <question>Re-Execute Last Command Line</question>
+        <key>Ctrl + Shift + E</key>
+    </hotkey>
+    <hotkey>
+        <question>Next Node in Path</question>
+        <key>Ctrl + .</key>
+    </hotkey>
+    <hotkey>
+        <question>Previous Node in Path</question>
+        <key>Ctrl + ,</key>
+    </hotkey>
+    <hotkey>
+        <question>Cancel Editing</question>
+        <key>Esc</key>
+    </hotkey>
+    <hotkey>
+        <question>Finish Editing</question>
+        <key>Enter</key>
+    </hotkey>
+    <hotkey>
+        <question>Advance to Next Field</question>
+        <key>Tab</key>
+    </hotkey>
+    <hotkey>
+        <question>Advance to Previous Field</question>
+        <key>Shift + Tab</key>
+    </hotkey>
+    <hotkey>
+        <question>Inspect Parent</question>
+        <key>Ctrl + Up</key>
+    </hotkey>
+    <hotkey>
+        <question>Inspect Child</question>
+        <key>Ctrl + Down</key>
+    </hotkey>
+<software>
