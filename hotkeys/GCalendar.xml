@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="X.X" def="Generic hotkeys for Google Calendar" software="GCalendar" softwaresite="http://www.google.com/calendar/">
+    <hotkey>
+        <question>Create event</question>
+        <key>c</key>
+    </hotkey>
+    <hotkey>
+        <question>Search</question>
+        <key>/</key>
+    </hotkey>
+    <hotkey>
+        <question>Previous date range</question>
+        <key>p</key>
+    </hotkey>
+    <hotkey>
+        <question>Next date range</question>
+        <key>n</key>
+    </hotkey>
+    <hotkey>
+        <question>Jump to Today</question>
+        <key>t</key>
+    </hotkey>
+    <hotkey>
+        <question>Day view</question>
+        <key>d</key>
+    </hotkey>
+    <hotkey>
+        <question>Week view</question>
+        <key>w</key>
+    </hotkey>
+    <hotkey>
+        <question>Month view</question>
+        <key>m</key>
+    </hotkey>
+    <hotkey>
+        <question>Customised view</question>
+        <key>x</key>
+    </hotkey>
+    <hotkey>
+        <question>Agenda view</question>
+        <key>a</key>
+    </hotkey>
+    <hotkey>
+        <question>Quick Add</question>
+        <key>q</key>
+    </hotkey>
+    <hotkey>
+        <question>Back to calendar</question>
+        <key>Esc</key>
+    </hotkey>
+</software>
+    
