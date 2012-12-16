@@ -13,6 +13,8 @@ class EditorWindow ( QDialog , Ui_Editor):
     hotkeys_folder = hotkeys_path+'/'
     questions = []
     hotkeys = []
+    item_previous = 2
+    questions_edit = []
 
     def __init__ ( self, parent = None ):
         QDialog.__init__( self, parent )
@@ -24,9 +26,8 @@ class EditorWindow ( QDialog , Ui_Editor):
                 self.ui.comboHotkeys.addItem(os.path.basename(filename))
         self.ui.comboHotkeys.currentIndexChanged.connect(self.loadHotkeys)
         self.ui.pushSave.clicked.connect(self.saveXML)
-        self.ui.listQuestion.itemActivated.connect(self.loadQuestion)
+        self.ui.listQuestion.currentRowChanged.connect(self.loadQuestion)
         self.loadHotkeys()
-#        self.ui.test = Ui_LineBlockWidget()
         self.show()
 
     def loadHotkeys(self):
@@ -59,7 +60,6 @@ class EditorWindow ( QDialog , Ui_Editor):
         count_child = 0
         child = root.firstChildElement('hotkey')
         while not child.isNull():
-            #self.html_cs += "\n<tr><td>%s</td><td>%s</td></tr>" % (child.firstChildElement('question').text(),child.firstChildElement('key').text())
             count_child += 1
             self.ui.listQuestion.addItem(str(count_child) + ' - '+ child.firstChildElement('question').text())
             self.questions.append(child.firstChildElement('question').text())
@@ -67,10 +67,25 @@ class EditorWindow ( QDialog , Ui_Editor):
             child = child.nextSiblingElement('hotkey')
         self.ui.totalQuestion.setText('Total question: '+str(count_child))
         self.ui.listQuestion.item(0).setSelected(True)
+        self.loadQuestion(0)
 
     def loadQuestion(self,item):
-#        self.ui.question.setText(self.questions[item.])
-        pass
+        self.ui.question.textChanged.disconnect()
+        self.ui.hotkey.textChanged.disconnect()
+        self.ui.question.setText(self.questions[item])
+        self.ui.hotkey.setText(self.hotkeys[item])
+        self.item_previous = item
+        self.ui.question.textChanged.connect(self.markEdited)
+        self.ui.hotkey.textChanged.connect(self.markEdited)
+
+    def markEdited(self):
+            try:
+                b=self.questions_edit.index(self.ui.listQuestion.currentRow())
+            except ValueError:
+                item_selected = self.ui.listQuestion.item(self.ui.listQuestion.currentRow())
+                if item_selected != None:
+                    item_selected.setText(item_selected.text() + '*')
+                    self.questions_edit.append(self.ui.listQuestion.currentRow())
 
     def saveXML(self):
         pass

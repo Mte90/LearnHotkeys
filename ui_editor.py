@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/editor.ui'
 #
-# Created: Fri Dec 14 17:55:27 2012
+# Created: Sat Dec 15 18:01:00 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -150,7 +150,7 @@ class Ui_Editor(object):
         self.label_7 = QtGui.QLabel(self.gridLayoutWidget_3)
         self.label_7.setObjectName(_fromUtf8("label_7"))
         self.gridLayout_4.addWidget(self.label_7, 2, 0, 1, 1)
-        self.question = QtGui.QPlainTextEdit(self.gridLayoutWidget_3)
+        self.question = QtGui.QTextEdit(self.gridLayoutWidget_3)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
