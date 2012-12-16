@@ -13,7 +13,6 @@ class EditorWindow ( QDialog , Ui_Editor):
     hotkeys_folder = hotkeys_path+'/'
     questions = []
     hotkeys = []
-    item_previous = 2
     questions_edit = []
 
     def __init__ ( self, parent = None ):
@@ -27,6 +26,8 @@ class EditorWindow ( QDialog , Ui_Editor):
         self.ui.comboHotkeys.currentIndexChanged.connect(self.loadHotkeys)
         self.ui.pushSave.clicked.connect(self.saveXML)
         self.ui.listQuestion.currentRowChanged.connect(self.loadQuestion)
+        self.ui.question.textChanged.connect(self.markEdited)
+        self.ui.hotkey.textChanged.connect(self.markEdited)
         self.loadHotkeys()
         self.show()
 
@@ -74,18 +75,23 @@ class EditorWindow ( QDialog , Ui_Editor):
         self.ui.hotkey.textChanged.disconnect()
         self.ui.question.setText(self.questions[item])
         self.ui.hotkey.setText(self.hotkeys[item])
-        self.item_previous = item
         self.ui.question.textChanged.connect(self.markEdited)
         self.ui.hotkey.textChanged.connect(self.markEdited)
 
     def markEdited(self):
-            try:
-                b=self.questions_edit.index(self.ui.listQuestion.currentRow())
-            except ValueError:
-                item_selected = self.ui.listQuestion.item(self.ui.listQuestion.currentRow())
-                if item_selected != None:
-                    item_selected.setText(item_selected.text() + '*')
-                    self.questions_edit.append(self.ui.listQuestion.currentRow())
+        a = self.ui.listQuestion.currentRow()
+        if a == -1:
+            a = 0
+        self.questions[a] = self.ui.question.toPlainText()
+        self.hotkeys[a] = self.ui.hotkey.text()
+        try:
+            b = self.questions_edit.index(a)
+        except ValueError:
+            item_selected = self.ui.listQuestion.item(a)
+            if item_selected != None:
+                if self.ui.question.toPlainText() != self.questions[a]:
+                    item_selected.setText(str(a) + ' - '+ self.ui.question.toPlainText()+ '*')
+                self.questions_edit.append(a)
 
     def saveXML(self):
         pass
