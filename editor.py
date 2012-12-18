@@ -82,16 +82,17 @@ class EditorWindow ( QDialog , Ui_Editor):
         a = self.ui.listQuestion.currentRow()
         if a == -1:
             a = 0
-        self.questions[a] = self.ui.question.toPlainText()
-        self.hotkeys[a] = self.ui.hotkey.text()
         try:
-            b = self.questions_edit.index(a)
-        except ValueError:
+           self.questions_edit[a]
+        except IndexError:
             item_selected = self.ui.listQuestion.item(a)
             if item_selected != None:
+                print (self.ui.question.toPlainText()+'-'+self.questions[a])
                 if self.ui.question.toPlainText() != self.questions[a]:
                     item_selected.setText(str(a) + ' - '+ self.ui.question.toPlainText()+ '*')
                 self.questions_edit.append(a)
+        self.questions[a] = self.ui.question.toPlainText()
+        self.hotkeys[a] = self.ui.hotkey.text()
 
     def saveXML(self):
         pass
