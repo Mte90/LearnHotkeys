@@ -78,8 +78,11 @@ class EditorWindow ( QDialog , Ui_Editor):
     def loadQuestion(self,item):
         self.ui.question.textChanged.disconnect()
         self.ui.hotkey.textChanged.disconnect()
-        self.ui.question.setText(self.questions[item])
-        self.ui.hotkey.setText(self.hotkeys[item])
+        try:
+           self.ui.question.setText(self.questions[item])
+           self.ui.hotkey.setText(self.hotkeys[item])
+        except IndexError:
+            pass
         self.ui.question.textChanged.connect(self.markEdited)
         self.ui.hotkey.textChanged.connect(self.markEdited)
 
