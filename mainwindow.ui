@@ -169,16 +169,16 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QPushButton" name="openEditor">
+         <widget class="QPushButton" name="openDef">
           <property name="text">
-           <string>Editor</string>
+           <string>Change Option</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="openDef">
+         <widget class="QPushButton" name="openEditor">
           <property name="text">
-           <string>Change Option</string>
+           <string>Editor</string>
           </property>
          </widget>
         </item>

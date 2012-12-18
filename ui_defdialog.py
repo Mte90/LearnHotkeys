@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/defdialog.ui'
 #
-# Created: Tue Dec 11 15:34:11 2012
+# Created: Tue Dec 18 17:51:54 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -20,18 +20,20 @@ class Ui_DefDialog(object):
         DefDialog.resize(392, 309)
         DefDialog.setModal(True)
         self.pushApply = QtGui.QPushButton(DefDialog)
-        self.pushApply.setGeometry(QtCore.QRect(280, 280, 97, 23))
+        self.pushApply.setGeometry(QtCore.QRect(280, 280, 97, 25))
         self.pushApply.setObjectName(_fromUtf8("pushApply"))
         self.groupBox = QtGui.QGroupBox(DefDialog)
         self.groupBox.setGeometry(QtCore.QRect(10, 10, 371, 121))
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
+        self.gridLayout = QtGui.QGridLayout(self.groupBox)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.comboDef = QtGui.QComboBox(self.groupBox)
-        self.comboDef.setGeometry(QtCore.QRect(20, 30, 331, 21))
         self.comboDef.setObjectName(_fromUtf8("comboDef"))
+        self.gridLayout.addWidget(self.comboDef, 0, 0, 1, 1)
         self.labelDef = QtGui.QLabel(self.groupBox)
-        self.labelDef.setGeometry(QtCore.QRect(20, 60, 331, 51))
         self.labelDef.setText(_fromUtf8(""))
         self.labelDef.setObjectName(_fromUtf8("labelDef"))
+        self.gridLayout.addWidget(self.labelDef, 1, 0, 1, 1)
         self.pushUpdate = QtGui.QPushButton(DefDialog)
         self.pushUpdate.setGeometry(QtCore.QRect(180, 280, 94, 25))
         self.pushUpdate.setObjectName(_fromUtf8("pushUpdate"))
@@ -39,12 +41,14 @@ class Ui_DefDialog(object):
         self.pushDownload.setGeometry(QtCore.QRect(80, 280, 94, 25))
         self.pushDownload.setObjectName(_fromUtf8("pushDownload"))
         self.groupBox_2 = QtGui.QGroupBox(DefDialog)
-        self.groupBox_2.setGeometry(QtCore.QRect(9, 140, 371, 131))
+        self.groupBox_2.setGeometry(QtCore.QRect(10, 130, 371, 141))
         self.groupBox_2.setObjectName(_fromUtf8("groupBox_2"))
+        self.gridLayout_2 = QtGui.QGridLayout(self.groupBox_2)
+        self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
         self.listUpdate = QtGui.QListView(self.groupBox_2)
-        self.listUpdate.setGeometry(QtCore.QRect(0, 30, 371, 101))
         self.listUpdate.setProperty("showDropIndicator", False)
         self.listUpdate.setObjectName(_fromUtf8("listUpdate"))
+        self.gridLayout_2.addWidget(self.listUpdate, 0, 0, 1, 1)
 
         self.retranslateUi(DefDialog)
         QtCore.QMetaObject.connectSlotsByName(DefDialog)

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/cheatsheet.ui'
 #
-# Created: Tue Dec 11 11:54:33 2012
+# Created: Tue Dec 18 18:02:39 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -19,20 +19,22 @@ class Ui_CSDialog(object):
         CSDialog.setObjectName(_fromUtf8("CSDialog"))
         CSDialog.resize(421, 371)
         CSDialog.setModal(True)
+        self.gridLayout = QtGui.QGridLayout(CSDialog)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.csView = QtWebKit.QWebView(CSDialog)
-        self.csView.setGeometry(QtCore.QRect(10, 10, 401, 321))
         self.csView.setAcceptDrops(False)
         self.csView.setUrl(QtCore.QUrl(_fromUtf8("about:blank")))
         self.csView.setObjectName(_fromUtf8("csView"))
-        self.saveButton = QtGui.QPushButton(CSDialog)
-        self.saveButton.setGeometry(QtCore.QRect(210, 340, 97, 23))
-        self.saveButton.setObjectName(_fromUtf8("saveButton"))
-        self.closeButton = QtGui.QPushButton(CSDialog)
-        self.closeButton.setGeometry(QtCore.QRect(320, 340, 97, 23))
-        self.closeButton.setObjectName(_fromUtf8("closeButton"))
+        self.gridLayout.addWidget(self.csView, 0, 0, 1, 3)
         self.themeChooser = QtGui.QComboBox(CSDialog)
-        self.themeChooser.setGeometry(QtCore.QRect(10, 340, 191, 22))
         self.themeChooser.setObjectName(_fromUtf8("themeChooser"))
+        self.gridLayout.addWidget(self.themeChooser, 1, 0, 1, 1)
+        self.saveButton = QtGui.QPushButton(CSDialog)
+        self.saveButton.setObjectName(_fromUtf8("saveButton"))
+        self.gridLayout.addWidget(self.saveButton, 1, 1, 1, 1)
+        self.closeButton = QtGui.QPushButton(CSDialog)
+        self.closeButton.setObjectName(_fromUtf8("closeButton"))
+        self.gridLayout.addWidget(self.closeButton, 1, 2, 1, 1)
 
         self.retranslateUi(CSDialog)
         QtCore.QMetaObject.connectSlotsByName(CSDialog)

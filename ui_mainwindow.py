@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/mainwindow.ui'
 #
-# Created: Tue Dec 18 18:00:58 2012
+# Created: Tue Dec 18 18:03:45 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -100,12 +100,12 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.groupBox)
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
-        self.openEditor = QtGui.QPushButton(self.centralWidget)
-        self.openEditor.setObjectName(_fromUtf8("openEditor"))
-        self.horizontalLayout_2.addWidget(self.openEditor)
         self.openDef = QtGui.QPushButton(self.centralWidget)
         self.openDef.setObjectName(_fromUtf8("openDef"))
         self.horizontalLayout_2.addWidget(self.openDef)
+        self.openEditor = QtGui.QPushButton(self.centralWidget)
+        self.openEditor.setObjectName(_fromUtf8("openEditor"))
+        self.horizontalLayout_2.addWidget(self.openEditor)
         self.pushInfo = QtGui.QPushButton(self.centralWidget)
         self.pushInfo.setObjectName(_fromUtf8("pushInfo"))
         self.horizontalLayout_2.addWidget(self.pushInfo)
@@ -124,7 +124,7 @@ class Ui_MainWindow(object):
         self.radioButton_2.setText(QtGui.QApplication.translate("MainWindow", "RadioButton", None, QtGui.QApplication.UnicodeUTF8))
         self.radioButton_3.setText(QtGui.QApplication.translate("MainWindow", "RadioButton", None, QtGui.QApplication.UnicodeUTF8))
         self.newQuestionButton.setText(QtGui.QApplication.translate("MainWindow", "New Question", None, QtGui.QApplication.UnicodeUTF8))
-        self.openEditor.setText(QtGui.QApplication.translate("MainWindow", "Editor", None, QtGui.QApplication.UnicodeUTF8))
         self.openDef.setText(QtGui.QApplication.translate("MainWindow", "Change Option", None, QtGui.QApplication.UnicodeUTF8))
+        self.openEditor.setText(QtGui.QApplication.translate("MainWindow", "Editor", None, QtGui.QApplication.UnicodeUTF8))
         self.pushInfo.setText(QtGui.QApplication.translate("MainWindow", "Info", None, QtGui.QApplication.UnicodeUTF8))
 
