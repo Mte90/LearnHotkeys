@@ -22,12 +22,14 @@ class EditorWindow ( QDialog , Ui_Editor):
         for root, dirs, files in os.walk(self.hotkeys_path):
             for name in files:
                 filename = os.path.join(root, name)
-                self.ui.comboHotkeys.addItem(os.path.basename(filename))
+                if os.path.basename(filename) != 'list':
+                    self.ui.comboHotkeys.addItem(os.path.basename(filename))
         self.ui.comboHotkeys.currentIndexChanged.connect(self.loadHotkeys)
         self.ui.pushSave.clicked.connect(self.saveXML)
         self.ui.listQuestion.currentRowChanged.connect(self.loadQuestion)
         self.ui.question.textChanged.connect(self.markEdited)
         self.ui.hotkey.textChanged.connect(self.markEdited)
+        self.ui.pushNewQuestion.pressed.connect(self.newField)
         self.loadHotkeys()
         self.show()
 
@@ -36,6 +38,9 @@ class EditorWindow ( QDialog , Ui_Editor):
         dom = QDomDocument()
         error = None
         fh = None
+        self.questions[:] = []
+        self.hotkeys[:] = []
+        self.ui.listQuestion.clear()
         try:
             fh = QFile(fname)
             if not fh.open(QIODevice.ReadOnly):
@@ -87,12 +92,18 @@ class EditorWindow ( QDialog , Ui_Editor):
         except IndexError:
             item_selected = self.ui.listQuestion.item(a)
             if item_selected != None:
-                print (self.ui.question.toPlainText()+'-'+self.questions[a])
                 if self.ui.question.toPlainText() != self.questions[a]:
                     item_selected.setText(str(a) + ' - '+ self.ui.question.toPlainText()+ '*')
                 self.questions_edit.append(a)
         self.questions[a] = self.ui.question.toPlainText()
         self.hotkeys[a] = self.ui.hotkey.text()
+
+    def newField(self):
+        number_question = self.ui.listQuestion.count()+1
+        self.ui.listQuestion.addItem(str(number_question) + ' - ')
+        self.questions.append(' ')
+        self.hotkeys.append(' ')
+        self.loadQuestion(number_question-1)
 
     def saveXML(self):
         pass
