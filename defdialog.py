@@ -23,7 +23,8 @@ class DefWindow ( QDialog , Ui_DefDialog):
         for root, dirs, files in os.walk(self.hotkeys_path):
             for name in files:
                 filename = os.path.join(root, name)
-                self.ui.comboDef.addItem(os.path.basename(filename))
+                if os.path.basename(filename) != 'list':
+                    self.ui.comboDef.addItem(os.path.basename(filename))
         if sys.version_info < (3, 0):
             try:
                 if self.ui.comboDef.findText(self.settings.value('file_name_default').toString) != -1:
@@ -47,6 +48,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 
     def downloadList(self):
         urllib.urlretrieve('https://raw.github.com/Mte90/LearnHotkeys/master/hotkeys/list', self.hotkeys_folder+'list')
+        QMessageBox.information(self.window(), "LearnHotkeys","The file list has been updated.")
         self.parseList()
 
     def parseList(self):
@@ -81,6 +83,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
             file_name = str(check_box.toolTip())
             if state != False:
                 urllib.urlretrieve('https://raw.github.com/Mte90/LearnHotkeys/master/hotkeys/'+file_name, self.hotkeys_folder+file_name)
+                QMessageBox.information(self.window(), "LearnHotkeys","The file %s has been downloaded." % file_name)
         self.parseList()
 
     def syntaxParser(self,file):

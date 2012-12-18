@@ -22,7 +22,7 @@
      <x>280</x>
      <y>280</y>
      <width>97</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="text">
@@ -41,29 +41,18 @@
    <property name="title">
     <string>Choose Definition File</string>
    </property>
-   <widget class="QComboBox" name="comboDef">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>30</y>
-      <width>331</width>
-      <height>21</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="labelDef">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>60</y>
-      <width>331</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QComboBox" name="comboDef"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelDef">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QPushButton" name="pushUpdate">
    <property name="geometry">
@@ -94,28 +83,24 @@
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>140</y>
+     <x>10</x>
+     <y>130</y>
      <width>371</width>
-     <height>131</height>
+     <height>141</height>
     </rect>
    </property>
    <property name="title">
     <string>Update</string>
    </property>
-   <widget class="QListView" name="listUpdate">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>30</y>
-      <width>371</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="showDropIndicator" stdset="0">
-     <bool>false</bool>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QListView" name="listUpdate">
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

@@ -30,6 +30,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
         self.ui.radioButton_3.pressed.connect(lambda who=self.ui.radioButton_3: self.checkAnswer(who))
         self.ui.newQuestionButton.clicked.connect(self.new_question)
         self.ui.openDef.clicked.connect(self.openDefDialog)
+        self.ui.pushInfo.clicked.connect(self.openInfo)
         self.ui.openCS.clicked.connect(self.openCSDialog)
         self.ui.openEditor.clicked.connect(self.openEditor)
         self.ui.question.setWordWrap(True)
@@ -112,6 +113,9 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
         ui.setupUi(window)
         if ui.exec_() == 1:
             self.loadHotkeys()
+
+    def openInfo(self):
+        QMessageBox.about(self.window(), "About LearnHotkeys","LearnHotKeys V 1.0 Alpha <br><br>Software made by <a href='http://www.mte90.net'><b>Mte90</b></a><br><br><a href='https://github.com/Mte90/LearnHotkeys'>Official Site</a>")
 
     def checkAnswer(self, who):
         #check the answer
