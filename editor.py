@@ -110,15 +110,33 @@ class EditorWindow ( QDialog , Ui_Editor):
         self.ui.listQuestion.setCurrentRow(number_question-1)
 
     def saveXML(self):
-        pass
-        #if sys.version_info < (3, 0):
-            #filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default').toString()[:-4]+'.html')
-            #fname = open(filename, 'w')
-            #html = (self.html_style% self.get_file_content(self.theme_folder+self.settings.value('theme').toString()))+self.html_def+self.html_thead+self.html_cs
-        #else:
-            #filename =  QFileDialog.getSaveFileName(self, 'Save HTML CheatSheet', self.settings.value('file_name_default')[:-4]+'.html')
-            #fname = open(filename, 'w')
-            #html = (self.html_style% self.get_file_content(self.theme_folder+self.settings.value('theme')))+self.html_def+self.html_thead+self.html_cs
-        #fname.write(html.toUtf8()+"\n")
-        #fname.close()
-
+        fname = self.hotkeys_folder+self.ui.comboHotkeys.currentText()
+        error = None
+        fh = None
+        try:
+            fh = QFile(fname)
+            if not fh.open(QIODevice.WriteOnly):
+                raise IOError, unicode(fh.errorString())
+            stream = QTextStream(fh)
+            stream.setCodec('UTF-8')
+            stream << ("<?xml version='1.0' encoding='UTF-8' ?>\n"
+                       '<software fileversion="%s" softwareversion="%s" def="%s" software="%s" softwaresite="%s">' % (
+                        self.ui.fileVersion.text(),
+                        self.ui.softwareVersion.text(),
+                        self.ui.description.text(),
+                        self.ui.softwareName.text(),
+                        self.ui.webSite.text()))
+            stream <<  ("\n")
+            for key, value_ in enumerate(self.questions):
+                stream << ("\t<hotkey>\n"
+                           "\t\t<question>%s</question>\n"
+                           "\t\t<key>%s</key>\n"
+                           "\t</hotkey>\n" % (value_,self.hotkeys[key]))
+            stream << "</software>\n"
+        except (IOError, OSError), e:
+            error = "Failed to export: %s" % e
+        finally:
+            if fh is not None:
+                fh.close()
+            if error is not None:
+                print error

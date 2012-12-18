@@ -37,7 +37,6 @@ class DefWindow ( QDialog , Ui_DefDialog):
         self.parseList()
 
     def comboDefChanged(self):
-        fname = self.hotkeys_folder+self.ui.comboDef.currentText()
         root = self.syntaxParser(self.ui.comboDef.currentText())
         self.ui.labelDef.setText('<font style="font-weight:bold"> %s - %s<font><br>%s <br><a href="%s">%s</a>' \
         % (root.attribute('software'),root.attribute('softwareversion'),root.attribute('def'),root.attribute('softwaresite'),root.attribute('softwaresite')))
