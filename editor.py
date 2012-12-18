@@ -87,22 +87,22 @@ class EditorWindow ( QDialog , Ui_Editor):
         a = self.ui.listQuestion.currentRow()
         if a == -1:
             a = 0
+        item_selected = self.ui.listQuestion.item(a)
         try:
            self.questions_edit[a]
         except IndexError:
-            item_selected = self.ui.listQuestion.item(a)
             if item_selected != None:
-                if self.ui.question.toPlainText() != self.questions[a]:
-                    item_selected.setText(str(a+1) + ' - '+ self.ui.question.toPlainText()+ '*')
                 self.questions_edit.append(a)
+        if self.ui.question.toPlainText() != self.questions[a]:
+            item_selected.setText(str(a+1) + ' - '+ self.ui.question.toPlainText()+ '*')
         self.questions[a] = self.ui.question.toPlainText()
         self.hotkeys[a] = self.ui.hotkey.text()
 
     def newField(self):
         number_question = self.ui.listQuestion.count()+1
         self.ui.listQuestion.addItem(str(number_question) + ' - ')
-        self.questions.append(' ')
-        self.hotkeys.append(' ')
+        self.questions.append('')
+        self.hotkeys.append('')
         self.loadQuestion(number_question-1)
         self.ui.listQuestion.setCurrentRow(number_question-1)
 
