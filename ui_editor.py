@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/LearnHotkeys/editor.ui'
 #
-# Created: Sat Dec 15 18:01:00 2012
+# Created: Tue Dec 18 15:01:33 2012
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -136,7 +136,7 @@ class Ui_Editor(object):
         self.groupBox = QtGui.QGroupBox(self.verticalLayoutWidget)
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.gridLayoutWidget_3 = QtGui.QWidget(self.groupBox)
-        self.gridLayoutWidget_3.setGeometry(QtCore.QRect(10, 70, 291, 131))
+        self.gridLayoutWidget_3.setGeometry(QtCore.QRect(10, 60, 291, 160))
         self.gridLayoutWidget_3.setObjectName(_fromUtf8("gridLayoutWidget_3"))
         self.gridLayout_4 = QtGui.QGridLayout(self.gridLayoutWidget_3)
         self.gridLayout_4.setMargin(0)
@@ -156,7 +156,7 @@ class Ui_Editor(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.question.sizePolicy().hasHeightForWidth())
         self.question.setSizePolicy(sizePolicy)
-        self.question.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.question.setMaximumSize(QtCore.QSize(16777215, 90))
         self.question.setObjectName(_fromUtf8("question"))
         self.gridLayout_4.addWidget(self.question, 1, 0, 1, 1)
         self.gridLayout_3.addWidget(self.groupBox, 0, 1, 1, 1)
