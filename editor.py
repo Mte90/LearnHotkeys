@@ -72,7 +72,7 @@ class EditorWindow ( QDialog , Ui_Editor):
             self.hotkeys.append(child.firstChildElement('key').text())
             child = child.nextSiblingElement('hotkey')
         self.ui.totalQuestion.setText('Total question: '+str(count_child))
-        self.ui.listQuestion.item(0).setSelected(True)
+        self.ui.listQuestion.setCurrentRow(0)
         self.loadQuestion(0)
 
     def loadQuestion(self,item):
@@ -104,6 +104,7 @@ class EditorWindow ( QDialog , Ui_Editor):
         self.questions.append(' ')
         self.hotkeys.append(' ')
         self.loadQuestion(number_question-1)
+        self.ui.listQuestion.setCurrentRow(number_question-1)
 
     def saveXML(self):
         pass
