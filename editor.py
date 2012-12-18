@@ -14,6 +14,7 @@ class EditorWindow ( QDialog , Ui_Editor):
     questions = []
     hotkeys = []
     questions_edit = []
+    fileInUse = ''
 
     def __init__ ( self, parent = None ):
         QDialog.__init__( self, parent )
@@ -30,11 +31,13 @@ class EditorWindow ( QDialog , Ui_Editor):
         self.ui.question.textChanged.connect(self.markEdited)
         self.ui.hotkey.textChanged.connect(self.markEdited)
         self.ui.pushNewQuestion.pressed.connect(self.newField)
+        self.ui.pushNew.pressed.connect(self.newFile)
         self.loadHotkeys()
         self.show()
 
     def loadHotkeys(self):
-        fname = self.hotkeys_folder+self.ui.comboHotkeys.currentText()
+        self.fileInUse = self.ui.comboHotkeys.currentText()
+        fname = self.hotkeys_folder+self.fileInUse
         dom = QDomDocument()
         error = None
         fh = None
@@ -108,9 +111,29 @@ class EditorWindow ( QDialog , Ui_Editor):
         self.hotkeys.append('')
         self.loadQuestion(number_question-1)
         self.ui.listQuestion.setCurrentRow(number_question-1)
+        self.ui.totalQuestion.setText('Total question: '+str(number_question))
+
+    def newFile(self):
+        self.questions[:] = []
+        self.hotkeys[:] = []
+        self.ui.listQuestion.clear()
+        self.ui.description.setText('')
+        self.ui.webSite.setText('')
+        self.ui.fileVersion.setText('')
+        self.ui.softwareName.setText('')
+        self.ui.softwareVersion.setText('')
+        text, ok = QInputDialog.getText(self, 'New Question Hotkey File', 'Insert the name of the file:', QLineEdit.Normal, '.xml')
+        if (ok):
+             self.fileInUse = text
+             self.saveXML()
+             self.ui.comboHotkeys.currentIndexChanged.disconnect()
+             self.ui.comboHotkeys.addItem(text)
+             self.ui.comboHotkeys.setCurrentIndex(self.ui.comboHotkeys.count()-1)
+             self.ui.comboHotkeys.currentIndexChanged.connect(self.loadHotkeys)
+             self.newField()
 
     def saveXML(self):
-        fname = self.hotkeys_folder+self.ui.comboHotkeys.currentText()
+        fname = self.hotkeys_folder+self.fileInUse
         error = None
         fh = None
         try:
