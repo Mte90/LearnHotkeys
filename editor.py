@@ -93,7 +93,7 @@ class EditorWindow ( QDialog , Ui_Editor):
             item_selected = self.ui.listQuestion.item(a)
             if item_selected != None:
                 if self.ui.question.toPlainText() != self.questions[a]:
-                    item_selected.setText(str(a) + ' - '+ self.ui.question.toPlainText()+ '*')
+                    item_selected.setText(str(a+1) + ' - '+ self.ui.question.toPlainText()+ '*')
                 self.questions_edit.append(a)
         self.questions[a] = self.ui.question.toPlainText()
         self.hotkeys[a] = self.ui.hotkey.text()
