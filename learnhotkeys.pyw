@@ -17,6 +17,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
     hotkeys_folder = hotkeys_path+'/'
     settings = QSettings()
     settings.setFallbacksEnabled(False)
+    version = 'V 1.0 Alpha'
 
     def __init__ ( self, parent = None ):
         QMainWindow.__init__( self, parent )
@@ -24,6 +25,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
         self.ui.setupUi( self )
         #disabled new question button on load
         self.ui.newQuestionButton.setEnabled(False)
+        self.setWindowTitle('LearnHotkeys - '+self.version)
         #add signal on the widget
         self.ui.radioButton.pressed.connect(lambda who=self.ui.radioButton: self.checkAnswer(who))
         self.ui.radioButton_2.pressed.connect(lambda who=self.ui.radioButton_2: self.checkAnswer(who))
@@ -92,6 +94,9 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
             child = child.nextSiblingElement('hotkey')
         #load new question
         self.new_question()
+        #write file hotkeys in the title
+        self.setWindowTitle('LearnHotkeys - ' + root.attribute('software') + ' - '+self.version)
+
 
     def openDefDialog(self):
         #i need to explain this??
@@ -115,7 +120,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
             self.loadHotkeys()
 
     def openInfo(self):
-        QMessageBox.about(self.window(), "About LearnHotkeys","LearnHotKeys V 1.0 Alpha <br><br>Software made by <a href='http://www.mte90.net'><b>Mte90</b></a><br><br><a href='https://github.com/Mte90/LearnHotkeys'>Official Site</a>")
+        QMessageBox.about(self.window(), "About LearnHotkeys","LearnHotKeys " + self.version + " <br><br>Software made by <a href='http://www.mte90.net'><b>Mte90</b></a><br><br><a href='https://github.com/Mte90/LearnHotkeys'>Official Site</a>")
 
     def checkAnswer(self, who):
         #check the answer
