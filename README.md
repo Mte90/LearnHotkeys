@@ -6,6 +6,11 @@ For a list of program supported https://github.com/Mte90/LearnHotkeys/tree/maste
 For execute: learnhotkeys.pyw
 
 Status: Alpha
+#Feature
+	Update by the file on the repo for the hotkeys
+	Generator of cheatsheet in html
+	Integrated editor
+
 #ToDo Alpha
 	more definition hotkeys
 
