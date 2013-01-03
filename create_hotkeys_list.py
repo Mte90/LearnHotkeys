@@ -8,6 +8,7 @@ hotkeys_folder = hotkeys_path+'/'
 list_hotkeys = ''
 
 for root, dirs, files in os.walk(hotkeys_path):
+	files.sort()
 	for name in files:
 		if name.endswith('.xml'):
 			fname = os.path.join(root, name)

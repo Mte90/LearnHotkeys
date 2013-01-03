@@ -21,6 +21,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
         self.ui.pushDownload.clicked.connect(self.downloadSyntax)
         self.show()
         for root, dirs, files in os.walk(self.hotkeys_path):
+            files.sort()
             for name in files:
                 filename = os.path.join(root, name)
                 if os.path.basename(filename) != 'list':

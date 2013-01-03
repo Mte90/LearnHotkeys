@@ -24,6 +24,7 @@ class CSWindow ( QDialog , Ui_CSDialog):
         self.ui.saveButton.clicked.connect(self.saveHTML)
         self.ui.closeButton.clicked.connect(self.accept)
         for root, dirs, files in os.walk(self.theme_path):
+            files.sort()
             for name in files:
                 filename = os.path.join(root, name)
                 self.ui.themeChooser.addItem(os.path.basename(filename))

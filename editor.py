@@ -21,6 +21,7 @@ class EditorWindow ( QDialog , Ui_Editor):
         self.ui = Ui_Editor()
         self.ui.setupUi( self )
         for root, dirs, files in os.walk(self.hotkeys_path):
+            files.sort()
             for name in files:
                 filename = os.path.join(root, name)
                 if os.path.basename(filename) != 'list':
