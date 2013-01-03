@@ -24,7 +24,7 @@ PyQT
 Python
 
 #Option
-For generate a new local list file execute the create_hotkeys_list.py
+For generate a new local list file after the editing of a syntax file execute the create_hotkeys_list.py
 
 #Thanks to
  Fexys, oniontux, dlion
