@@ -28,7 +28,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
                     self.ui.comboDef.addItem(os.path.basename(filename))
         if sys.version_info < (3, 0):
             try:
-                if self.ui.comboDef.findText(self.settings.value('file_name_default').toString) != -1:
+                if self.ui.comboDef.findText(self.settings.value('file_name_default').toString()) != -1:
                     self.ui.comboDef.setCurrentIndex(self.ui.comboDef.findText(self.settings.value('file_name_default').toString()))
             except:
                 pass
