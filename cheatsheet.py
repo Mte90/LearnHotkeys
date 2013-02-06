@@ -7,7 +7,7 @@ from ui_cheatsheet import Ui_CSDialog
 
 class CSWindow ( QDialog , Ui_CSDialog):
 
-    settings = QSettings()
+    settings = QSettings('Mte90','LearnHotkeys')
     settings.setFallbacksEnabled(False)
     theme_path = "./style"
     theme_folder = theme_path+'/'

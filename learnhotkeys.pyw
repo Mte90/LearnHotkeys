@@ -15,7 +15,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
     key = []
     hotkeys_path = "./hotkeys"
     hotkeys_folder = hotkeys_path+'/'
-    settings = QSettings()
+    settings = QSettings('Mte90','LearnHotkeys')
     settings.setFallbacksEnabled(False)
     version = 'V 1.0 Alpha'
 

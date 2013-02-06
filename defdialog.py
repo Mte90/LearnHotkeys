@@ -9,7 +9,7 @@ class DefWindow ( QDialog , Ui_DefDialog):
 
     hotkeys_path = "./hotkeys"
     hotkeys_folder = hotkeys_path+'/'
-    settings = QSettings()
+    settings = QSettings('Mte90','LearnHotkeys')
     settings.setFallbacksEnabled(False)
 
     def __init__ ( self, parent = None ):
