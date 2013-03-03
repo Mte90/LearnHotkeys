@@ -7,7 +7,7 @@ from ui_editor import Ui_Editor
 
 class EditorWindow ( QDialog , Ui_Editor):
 
-    settings = QSettings()
+    settings = QSettings('Mte90','LearnHotkeys')
     settings.setFallbacksEnabled(False)
     hotkeys_path = "./hotkeys"
     hotkeys_folder = hotkeys_path+'/'
