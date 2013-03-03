@@ -2,7 +2,7 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyQt4.QtXml import *
-import sys, random
+import sys, random, signal
 
 from ui_mainwindow import Ui_MainWindow
 from defdialog import DefWindow
@@ -36,6 +36,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
         self.ui.openCS.clicked.connect(self.openCSDialog)
         self.ui.openEditor.clicked.connect(self.openEditor)
         self.ui.question.setWordWrap(True)
+        signal.signal(signal.SIGINT, signal.SIG_DFL)
         #load hotkeys file
         self.loadHotkeys()
         #center the window on the screen
