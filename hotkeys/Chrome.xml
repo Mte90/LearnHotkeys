@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software fileversion="1.0" softwareversion="X.X" def="Generic hotkeys for Chrome Browser" software="chrome" softwaresite="http://www.google.com/chrome/‎">
+	<hotkey>
+		<question>Opens a new window</question>
+		<key>Ctrl+N</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens a new tab</question>
+		<key>Ctrl+T</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens a new window in incognito mode</question>
+		<key>Ctrl+Shift+N</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens a file from your computer in Google Chrome</question>
+		<key>Ctrl+O</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens the link in a new tab in the background</question>
+		<key>Ctrl + click on link</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens the link in a new tab and switches to the newly opened tab</question>
+		<key>Ctrl + Shift + click on link</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens the link in a new window</question>
+		<key>Shift + click on link</key>
+	</hotkey>
+	<hotkey>
+		<question>Reopens the last tab you have closed</question>
+		<key>Ctrl+Shift+T</key>
+	</hotkey>
+	<hotkey>
+		<question>Switches to the tab at the specified position number on the tab strip</question>
+		<key>Ctrl+1 through Ctrl+8</key>
+	</hotkey>
+	<hotkey>
+		<question>Switches to the next tab</question>
+		<key>Ctrl+Tab or Ctrl+PgDown</key>
+	</hotkey>
+	<hotkey>
+		<question>Switches to the previous tab</question>
+		<key>Ctrl+Shift+Tab or Ctrl+PgUp</key>
+	</hotkey>
+	<hotkey>
+		<question>Closes the current window</question>
+		<key>Alt+F4 or Ctrl + Shift + W</key>
+	</hotkey>
+	<hotkey>
+		<question>Closes the current tab or pop-up</question>
+		<key>Ctrl+W or Ctrl+F4</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens your homepage in your current window</question>
+		<key>Alt+Home</key>
+	</hotkey>
+	<hotkey>
+		<question>Toggles the bookmarks bar on and off</question>
+		<key>Ctrl+Shift+B</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens the History page</question>
+		<key>Ctrl+H</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens the Downloads page</question>
+		<key>Ctrl+J</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens the Task Manager</question>
+		<key>Ctrl+Shift+Esc</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens Developer Tools</question>
+		<key>Ctrl+Shift+J</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens the Clear Browsing Data dialog</question>
+		<key>Ctrl+Shift+Delete</key>
+	</hotkey>
+	<hotkey>
+		<question>Switch between multiple users</question>
+		<key>Ctrl+Shift+M</key>
+	</hotkey>
+	<hotkey>
+		<question>Opens your page in full-screen mode</question>
+		<key>F11</key>
+	</hotkey>
+	<hotkey>
+		<question>Enlarges everything on the page</question>
+		<key>Ctrl and +, or press Ctrl and scroll your mousewheel up</key>
+	</hotkey>
+	<hotkey>
+		<question>Makes everything on the page smaller</question>
+		<key>Ctrl and -, or press Ctrl and scroll your mousewheel down 	</key>
+	</hotkey>
+	<hotkey>
+		<question>Returns everything on the page to normal size</question>
+		<key>Ctrl+0</key>
+	</hotkey>
+	<hotkey>
+		<question>Scrolls down the web page</question>
+		<key>Space bar</key>
+	</hotkey>
+</software>
