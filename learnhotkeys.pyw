@@ -17,7 +17,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
     hotkeys_folder = hotkeys_path+'/'
     settings = QSettings('Mte90','LearnHotkeys')
     settings.setFallbacksEnabled(False)
-    version = 'V 1.0 Alpha'
+    version = 'V 1.0 Beta'
 
     def __init__ ( self, parent = None ):
         QMainWindow.__init__( self, parent )
@@ -126,9 +126,9 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
     def checkAnswer(self, who):
         #check the answer
         if who.text() == self.key[self.question_chosen][1]:
-            self.ui.result.setText('Correct answer <b>'+self.key[self.question_chosen][1]+'</b> !')
+            self.ui.result.setText('Correct answer <b>'+self.key[self.question_chosen][1]+'</b>!')
         else:
-            self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer are %s</font>' % self.key[self.question_chosen][1])
+            self.ui.result.setText('<font color="#ff0000" style="font-weight:bold">The correct answer is %s</font>' % self.key[self.question_chosen][1])
         self.ui.newQuestionButton.setEnabled(True)
         self.ui.radioButton.setEnabled(False)
         self.ui.radioButton_2.setEnabled(False)

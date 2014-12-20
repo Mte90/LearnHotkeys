@@ -32,10 +32,14 @@ class CSWindow ( QDialog , Ui_CSDialog):
             if self.ui.themeChooser.findText(self.settings.value('theme').toString()) != -1:
                 self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme').toString()))
                 self.saveConfig()
+            else:
+                self.settings.setValue("theme", 'soft-grey.css')
         else:
             if self.ui.themeChooser.findText(self.settings.value('theme')) != -1:
                 self.ui.themeChooser.setCurrentIndex(self.ui.themeChooser.findText(self.settings.value('theme')))
                 self.saveConfig()
+            else:
+                self.settings.setValue("theme", 'soft-grey.css')
         self.ui.themeChooser.currentIndexChanged.connect(self.saveConfig)
         self.loadHotkeys()
         self.show()
